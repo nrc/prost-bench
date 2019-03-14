@@ -1,0 +1,25 @@
+[package]
+name = "prost-bench"
+version = "0.1.0"
+authors = ["Nick Cameron <nrc@ncameron.org>"]
+edition = "2018"
+build = "build.rs"
+
+[[bin]]
+name = "client"
+path = "src/bin/client.rs"
+
+[[bin]]
+name = "server"
+path = "src/bin/server.rs"
+
+[dependencies]
+futures = "0.1"
+grpcio = { path = "../grpc-rs", features = ["prost-codec"] }
+protobuf = "2.0"
+prost = "0.5"
+prost-derive = "0.5"
+bytes = "0.4"
+
+[build-dependencies]
+protobuf-build = { path = "../grpc-rs/protobuf-build" }

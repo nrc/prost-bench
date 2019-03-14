@@ -1,0 +1,10 @@
+syntax = "proto3";
+package simple;
+
+service Simple {
+  rpc Foo (Data) returns (Data) {}
+}
+
+message Data {
+    bytes payload = 1;
+}
