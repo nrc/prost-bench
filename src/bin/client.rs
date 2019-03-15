@@ -44,6 +44,11 @@ fn main() {
         MSG_SIZE,
         time.as_millis()
     );
+
+    if let Some(n) = get_resident() {
+        let kb = n as f64 / 1_000.0;
+        println!("rss: {}KB", kb.round() as usize)
+    }
 }
 
 #[inline]
@@ -102,4 +107,21 @@ fn terminate() {
     req.set_payload(vec![1]);
     let reply = client.foo_async(&req).expect("rpc");
     let _ = reply.wait().expect("future");
+}
+
+#[cfg(unix)]
+fn get_resident() -> Option<usize> {
+    use std::fs;
+
+    let field = 1;
+    let contents = fs::read("/proc/self/statm").ok()?;
+    let contents = String::from_utf8(contents).ok()?;
+    let s = contents.split_whitespace().nth(field)?;
+    let npages = s.parse::<usize>().ok()?;
+    Some(npages * 4096)
+}
+
+#[cfg(not(unix))]
+fn get_resident() -> Option<usize> {
+    None
 }
