@@ -1,6 +1,5 @@
 use protobuf_build::*;
-use std::fs::{read_dir, remove_file, File};
-use std::io::Write;
+use std::fs::read_dir;
 
 fn main() {
     let file_names: Vec<_> = read_dir("proto")
@@ -19,8 +18,7 @@ fn main() {
 
     // Generate Prost files.
     generate_prost_files(&file_names, "src/proto/prost");
-    //remove_file("src/prost/gogoproto.rs").unwrap();
-    //remove_file("src/prost/google.protobuf.rs").unwrap();
+
     let mod_names = module_names_for_dir("src/proto/prost");
     generate_wrappers(
         &mod_names
@@ -33,12 +31,4 @@ fn main() {
     // Generate rust-protobuf files.
     let file_names: Vec<_> = file_names.iter().map(|s| &**s).collect();
     generate_protobuf_files(&file_names, "src/proto/protobuf");
-
-    let mod_names = module_names_for_dir("src/proto/protobuf");
-
-    let out_file_names: Vec<_> = mod_names
-        .iter()
-        .map(|m| format!("src/proto/protobuf/{}.rs", m))
-        .collect();
-    let out_file_names: Vec<_> = out_file_names.iter().map(|f| &**f).collect();
 }
