@@ -26,6 +26,7 @@ fn main() {
             .map(|m| format!("src/proto/prost/{}.rs", m))
             .collect::<Vec<_>>(),
         "src/proto/prost",
+        GenOpt::all(),
     );
 
     // Generate rust-protobuf files.
