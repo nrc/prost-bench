@@ -83,7 +83,11 @@ impl ::protobuf::Message for Data {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(self, bytes) {
+        if let Err(_) = ::prost::Message::merge(
+            self,
+            bytes,
+            &mut ::prost::encoding::DecodeContext::default(),
+        ) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
