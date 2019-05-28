@@ -103,11 +103,7 @@ impl ::protobuf::Message for BatchCommandsRequest {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -178,11 +174,7 @@ impl ::protobuf::Message for batch_commands_request::Request {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -305,11 +297,7 @@ impl ::protobuf::Message for BatchCommandsResponse {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -380,11 +368,7 @@ impl ::protobuf::Message for batch_commands_response::Response {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -431,7 +415,7 @@ impl GetRequest {
         self.key.clear();
     }
     #[inline]
-    pub fn set_key(&mut self, v: std::vec::Vec<u8>) {
+    pub fn set_key(&mut self, v: ::bytes::Bytes) {
         self.key = v;
     }
     #[inline]
@@ -439,12 +423,12 @@ impl GetRequest {
         &self.key
     }
     #[inline]
-    pub fn mut_key(&mut self) -> &mut std::vec::Vec<u8> {
+    pub fn mut_key(&mut self) -> &mut ::bytes::Bytes {
         &mut self.key
     }
     #[inline]
-    pub fn take_key(&mut self) -> std::vec::Vec<u8> {
-        ::std::mem::replace(&mut self.key, ::std::vec::Vec::new())
+    pub fn take_key(&mut self) -> ::bytes::Bytes {
+        ::std::mem::replace(&mut self.key, ::bytes::Bytes::new())
     }
     #[inline]
     pub fn clear_version(&mut self) {
@@ -517,11 +501,7 @@ impl ::protobuf::Message for GetRequest {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -598,7 +578,7 @@ impl GetResponse {
         self.value.clear();
     }
     #[inline]
-    pub fn set_value(&mut self, v: std::vec::Vec<u8>) {
+    pub fn set_value(&mut self, v: ::bytes::Bytes) {
         self.value = v;
     }
     #[inline]
@@ -606,12 +586,12 @@ impl GetResponse {
         &self.value
     }
     #[inline]
-    pub fn mut_value(&mut self) -> &mut std::vec::Vec<u8> {
+    pub fn mut_value(&mut self) -> &mut ::bytes::Bytes {
         &mut self.value
     }
     #[inline]
-    pub fn take_value(&mut self) -> std::vec::Vec<u8> {
-        ::std::mem::replace(&mut self.value, ::std::vec::Vec::new())
+    pub fn take_value(&mut self) -> ::bytes::Bytes {
+        ::std::mem::replace(&mut self.value, ::bytes::Bytes::new())
     }
 }
 impl ::protobuf::Clear for GetResponse {
@@ -672,11 +652,7 @@ impl ::protobuf::Message for GetResponse {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -723,7 +699,7 @@ impl ScanRequest {
         self.start_key.clear();
     }
     #[inline]
-    pub fn set_start_key(&mut self, v: std::vec::Vec<u8>) {
+    pub fn set_start_key(&mut self, v: ::bytes::Bytes) {
         self.start_key = v;
     }
     #[inline]
@@ -731,12 +707,12 @@ impl ScanRequest {
         &self.start_key
     }
     #[inline]
-    pub fn mut_start_key(&mut self) -> &mut std::vec::Vec<u8> {
+    pub fn mut_start_key(&mut self) -> &mut ::bytes::Bytes {
         &mut self.start_key
     }
     #[inline]
-    pub fn take_start_key(&mut self) -> std::vec::Vec<u8> {
-        ::std::mem::replace(&mut self.start_key, ::std::vec::Vec::new())
+    pub fn take_start_key(&mut self) -> ::bytes::Bytes {
+        ::std::mem::replace(&mut self.start_key, ::bytes::Bytes::new())
     }
     #[inline]
     pub fn clear_limit(&mut self) {
@@ -791,7 +767,7 @@ impl ScanRequest {
         self.end_key.clear();
     }
     #[inline]
-    pub fn set_end_key(&mut self, v: std::vec::Vec<u8>) {
+    pub fn set_end_key(&mut self, v: ::bytes::Bytes) {
         self.end_key = v;
     }
     #[inline]
@@ -799,12 +775,12 @@ impl ScanRequest {
         &self.end_key
     }
     #[inline]
-    pub fn mut_end_key(&mut self) -> &mut std::vec::Vec<u8> {
+    pub fn mut_end_key(&mut self) -> &mut ::bytes::Bytes {
         &mut self.end_key
     }
     #[inline]
-    pub fn take_end_key(&mut self) -> std::vec::Vec<u8> {
-        ::std::mem::replace(&mut self.end_key, ::std::vec::Vec::new())
+    pub fn take_end_key(&mut self) -> ::bytes::Bytes {
+        ::std::mem::replace(&mut self.end_key, ::bytes::Bytes::new())
     }
 }
 impl ::protobuf::Clear for ScanRequest {
@@ -865,11 +841,7 @@ impl ::protobuf::Message for ScanRequest {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -916,7 +888,7 @@ impl KvPair {
         self.key.clear();
     }
     #[inline]
-    pub fn set_key(&mut self, v: std::vec::Vec<u8>) {
+    pub fn set_key(&mut self, v: ::bytes::Bytes) {
         self.key = v;
     }
     #[inline]
@@ -924,19 +896,19 @@ impl KvPair {
         &self.key
     }
     #[inline]
-    pub fn mut_key(&mut self) -> &mut std::vec::Vec<u8> {
+    pub fn mut_key(&mut self) -> &mut ::bytes::Bytes {
         &mut self.key
     }
     #[inline]
-    pub fn take_key(&mut self) -> std::vec::Vec<u8> {
-        ::std::mem::replace(&mut self.key, ::std::vec::Vec::new())
+    pub fn take_key(&mut self) -> ::bytes::Bytes {
+        ::std::mem::replace(&mut self.key, ::bytes::Bytes::new())
     }
     #[inline]
     pub fn clear_value(&mut self) {
         self.value.clear();
     }
     #[inline]
-    pub fn set_value(&mut self, v: std::vec::Vec<u8>) {
+    pub fn set_value(&mut self, v: ::bytes::Bytes) {
         self.value = v;
     }
     #[inline]
@@ -944,12 +916,12 @@ impl KvPair {
         &self.value
     }
     #[inline]
-    pub fn mut_value(&mut self) -> &mut std::vec::Vec<u8> {
+    pub fn mut_value(&mut self) -> &mut ::bytes::Bytes {
         &mut self.value
     }
     #[inline]
-    pub fn take_value(&mut self) -> std::vec::Vec<u8> {
-        ::std::mem::replace(&mut self.value, ::std::vec::Vec::new())
+    pub fn take_value(&mut self) -> ::bytes::Bytes {
+        ::std::mem::replace(&mut self.value, ::bytes::Bytes::new())
     }
 }
 impl ::protobuf::Clear for KvPair {
@@ -1010,11 +982,7 @@ impl ::protobuf::Message for KvPair {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -1135,11 +1103,7 @@ impl ::protobuf::Message for ScanResponse {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -1168,7 +1132,7 @@ impl Mutation {
         self.key.clear();
     }
     #[inline]
-    pub fn set_key(&mut self, v: std::vec::Vec<u8>) {
+    pub fn set_key(&mut self, v: ::bytes::Bytes) {
         self.key = v;
     }
     #[inline]
@@ -1176,19 +1140,19 @@ impl Mutation {
         &self.key
     }
     #[inline]
-    pub fn mut_key(&mut self) -> &mut std::vec::Vec<u8> {
+    pub fn mut_key(&mut self) -> &mut ::bytes::Bytes {
         &mut self.key
     }
     #[inline]
-    pub fn take_key(&mut self) -> std::vec::Vec<u8> {
-        ::std::mem::replace(&mut self.key, ::std::vec::Vec::new())
+    pub fn take_key(&mut self) -> ::bytes::Bytes {
+        ::std::mem::replace(&mut self.key, ::bytes::Bytes::new())
     }
     #[inline]
     pub fn clear_value(&mut self) {
         self.value.clear();
     }
     #[inline]
-    pub fn set_value(&mut self, v: std::vec::Vec<u8>) {
+    pub fn set_value(&mut self, v: ::bytes::Bytes) {
         self.value = v;
     }
     #[inline]
@@ -1196,12 +1160,12 @@ impl Mutation {
         &self.value
     }
     #[inline]
-    pub fn mut_value(&mut self) -> &mut std::vec::Vec<u8> {
+    pub fn mut_value(&mut self) -> &mut ::bytes::Bytes {
         &mut self.value
     }
     #[inline]
-    pub fn take_value(&mut self) -> std::vec::Vec<u8> {
-        ::std::mem::replace(&mut self.value, ::std::vec::Vec::new())
+    pub fn take_value(&mut self) -> ::bytes::Bytes {
+        ::std::mem::replace(&mut self.value, ::bytes::Bytes::new())
     }
     #[inline]
     pub fn clear_assertion(&mut self) {
@@ -1274,11 +1238,7 @@ impl ::protobuf::Message for Mutation {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -1345,7 +1305,7 @@ impl PrewriteRequest {
         self.primary_lock.clear();
     }
     #[inline]
-    pub fn set_primary_lock(&mut self, v: std::vec::Vec<u8>) {
+    pub fn set_primary_lock(&mut self, v: ::bytes::Bytes) {
         self.primary_lock = v;
     }
     #[inline]
@@ -1353,12 +1313,12 @@ impl PrewriteRequest {
         &self.primary_lock
     }
     #[inline]
-    pub fn mut_primary_lock(&mut self) -> &mut std::vec::Vec<u8> {
+    pub fn mut_primary_lock(&mut self) -> &mut ::bytes::Bytes {
         &mut self.primary_lock
     }
     #[inline]
-    pub fn take_primary_lock(&mut self) -> std::vec::Vec<u8> {
-        ::std::mem::replace(&mut self.primary_lock, ::std::vec::Vec::new())
+    pub fn take_primary_lock(&mut self) -> ::bytes::Bytes {
+        ::std::mem::replace(&mut self.primary_lock, ::bytes::Bytes::new())
     }
     #[inline]
     pub fn clear_start_version(&mut self) {
@@ -1455,11 +1415,7 @@ impl ::protobuf::Message for PrewriteRequest {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -1580,11 +1536,7 @@ impl ::protobuf::Message for PrewriteResponse {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -1643,19 +1595,19 @@ impl CommitRequest {
         self.keys.clear();
     }
     #[inline]
-    pub fn set_keys(&mut self, v: ::std::vec::Vec<std::vec::Vec<u8>>) {
+    pub fn set_keys(&mut self, v: ::std::vec::Vec<::bytes::Bytes>) {
         self.keys = v;
     }
     #[inline]
-    pub fn get_keys(&self) -> &::std::vec::Vec<std::vec::Vec<u8>> {
+    pub fn get_keys(&self) -> &::std::vec::Vec<::bytes::Bytes> {
         &self.keys
     }
     #[inline]
-    pub fn mut_keys(&mut self) -> &mut ::std::vec::Vec<std::vec::Vec<u8>> {
+    pub fn mut_keys(&mut self) -> &mut ::std::vec::Vec<::bytes::Bytes> {
         &mut self.keys
     }
     #[inline]
-    pub fn take_keys(&mut self) -> ::std::vec::Vec<std::vec::Vec<u8>> {
+    pub fn take_keys(&mut self) -> ::std::vec::Vec<::bytes::Bytes> {
         ::std::mem::replace(&mut self.keys, ::std::vec::Vec::new())
     }
     #[inline]
@@ -1729,11 +1681,7 @@ impl ::protobuf::Message for CommitRequest {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -1864,11 +1812,7 @@ impl ::protobuf::Message for CommitResponse {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -1971,11 +1915,7 @@ impl ::protobuf::Message for ImportRequest {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -2022,7 +1962,7 @@ impl ImportResponse {
         self.error.clear();
     }
     #[inline]
-    pub fn set_error(&mut self, v: std::string::String) {
+    pub fn set_error(&mut self, v: ::prost::BytesString) {
         self.error = v;
     }
     #[inline]
@@ -2030,12 +1970,12 @@ impl ImportResponse {
         &self.error
     }
     #[inline]
-    pub fn mut_error(&mut self) -> &mut std::string::String {
+    pub fn mut_error(&mut self) -> &mut ::prost::BytesString {
         &mut self.error
     }
     #[inline]
-    pub fn take_error(&mut self) -> std::string::String {
-        ::std::mem::replace(&mut self.error, ::std::string::String::new())
+    pub fn take_error(&mut self) -> ::prost::BytesString {
+        ::std::mem::replace(&mut self.error, ::prost::BytesString::new())
     }
 }
 impl ::protobuf::Clear for ImportResponse {
@@ -2096,11 +2036,7 @@ impl ::protobuf::Message for ImportResponse {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -2159,19 +2095,19 @@ impl BatchRollbackRequest {
         self.keys.clear();
     }
     #[inline]
-    pub fn set_keys(&mut self, v: ::std::vec::Vec<std::vec::Vec<u8>>) {
+    pub fn set_keys(&mut self, v: ::std::vec::Vec<::bytes::Bytes>) {
         self.keys = v;
     }
     #[inline]
-    pub fn get_keys(&self) -> &::std::vec::Vec<std::vec::Vec<u8>> {
+    pub fn get_keys(&self) -> &::std::vec::Vec<::bytes::Bytes> {
         &self.keys
     }
     #[inline]
-    pub fn mut_keys(&mut self) -> &mut ::std::vec::Vec<std::vec::Vec<u8>> {
+    pub fn mut_keys(&mut self) -> &mut ::std::vec::Vec<::bytes::Bytes> {
         &mut self.keys
     }
     #[inline]
-    pub fn take_keys(&mut self) -> ::std::vec::Vec<std::vec::Vec<u8>> {
+    pub fn take_keys(&mut self) -> ::std::vec::Vec<::bytes::Bytes> {
         ::std::mem::replace(&mut self.keys, ::std::vec::Vec::new())
     }
 }
@@ -2233,11 +2169,7 @@ impl ::protobuf::Message for BatchRollbackRequest {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -2368,11 +2300,7 @@ impl ::protobuf::Message for BatchRollbackResponse {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -2419,7 +2347,7 @@ impl CleanupRequest {
         self.key.clear();
     }
     #[inline]
-    pub fn set_key(&mut self, v: std::vec::Vec<u8>) {
+    pub fn set_key(&mut self, v: ::bytes::Bytes) {
         self.key = v;
     }
     #[inline]
@@ -2427,12 +2355,12 @@ impl CleanupRequest {
         &self.key
     }
     #[inline]
-    pub fn mut_key(&mut self) -> &mut std::vec::Vec<u8> {
+    pub fn mut_key(&mut self) -> &mut ::bytes::Bytes {
         &mut self.key
     }
     #[inline]
-    pub fn take_key(&mut self) -> std::vec::Vec<u8> {
-        ::std::mem::replace(&mut self.key, ::std::vec::Vec::new())
+    pub fn take_key(&mut self) -> ::bytes::Bytes {
+        ::std::mem::replace(&mut self.key, ::bytes::Bytes::new())
     }
     #[inline]
     pub fn clear_start_version(&mut self) {
@@ -2505,11 +2433,7 @@ impl ::protobuf::Message for CleanupRequest {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -2652,11 +2576,7 @@ impl ::protobuf::Message for CleanupResponse {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -2703,19 +2623,19 @@ impl BatchGetRequest {
         self.keys.clear();
     }
     #[inline]
-    pub fn set_keys(&mut self, v: ::std::vec::Vec<std::vec::Vec<u8>>) {
+    pub fn set_keys(&mut self, v: ::std::vec::Vec<::bytes::Bytes>) {
         self.keys = v;
     }
     #[inline]
-    pub fn get_keys(&self) -> &::std::vec::Vec<std::vec::Vec<u8>> {
+    pub fn get_keys(&self) -> &::std::vec::Vec<::bytes::Bytes> {
         &self.keys
     }
     #[inline]
-    pub fn mut_keys(&mut self) -> &mut ::std::vec::Vec<std::vec::Vec<u8>> {
+    pub fn mut_keys(&mut self) -> &mut ::std::vec::Vec<::bytes::Bytes> {
         &mut self.keys
     }
     #[inline]
-    pub fn take_keys(&mut self) -> ::std::vec::Vec<std::vec::Vec<u8>> {
+    pub fn take_keys(&mut self) -> ::std::vec::Vec<::bytes::Bytes> {
         ::std::mem::replace(&mut self.keys, ::std::vec::Vec::new())
     }
     #[inline]
@@ -2789,11 +2709,7 @@ impl ::protobuf::Message for BatchGetRequest {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -2914,11 +2830,7 @@ impl ::protobuf::Message for BatchGetResponse {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -2977,7 +2889,7 @@ impl ScanLockRequest {
         self.start_key.clear();
     }
     #[inline]
-    pub fn set_start_key(&mut self, v: std::vec::Vec<u8>) {
+    pub fn set_start_key(&mut self, v: ::bytes::Bytes) {
         self.start_key = v;
     }
     #[inline]
@@ -2985,12 +2897,12 @@ impl ScanLockRequest {
         &self.start_key
     }
     #[inline]
-    pub fn mut_start_key(&mut self) -> &mut std::vec::Vec<u8> {
+    pub fn mut_start_key(&mut self) -> &mut ::bytes::Bytes {
         &mut self.start_key
     }
     #[inline]
-    pub fn take_start_key(&mut self) -> std::vec::Vec<u8> {
-        ::std::mem::replace(&mut self.start_key, ::std::vec::Vec::new())
+    pub fn take_start_key(&mut self) -> ::bytes::Bytes {
+        ::std::mem::replace(&mut self.start_key, ::bytes::Bytes::new())
     }
     #[inline]
     pub fn clear_limit(&mut self) {
@@ -3063,11 +2975,7 @@ impl ::protobuf::Message for ScanLockRequest {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -3218,11 +3126,7 @@ impl ::protobuf::Message for ScanLockResponse {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -3317,11 +3221,7 @@ impl ::protobuf::Message for TxnInfo {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -3466,11 +3366,7 @@ impl ::protobuf::Message for ResolveLockRequest {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -3601,11 +3497,7 @@ impl ::protobuf::Message for ResolveLockResponse {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -3718,11 +3610,7 @@ impl ::protobuf::Message for GcRequest {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -3853,11 +3741,7 @@ impl ::protobuf::Message for GcResponse {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -3904,7 +3788,7 @@ impl RawGetRequest {
         self.key.clear();
     }
     #[inline]
-    pub fn set_key(&mut self, v: std::vec::Vec<u8>) {
+    pub fn set_key(&mut self, v: ::bytes::Bytes) {
         self.key = v;
     }
     #[inline]
@@ -3912,19 +3796,19 @@ impl RawGetRequest {
         &self.key
     }
     #[inline]
-    pub fn mut_key(&mut self) -> &mut std::vec::Vec<u8> {
+    pub fn mut_key(&mut self) -> &mut ::bytes::Bytes {
         &mut self.key
     }
     #[inline]
-    pub fn take_key(&mut self) -> std::vec::Vec<u8> {
-        ::std::mem::replace(&mut self.key, ::std::vec::Vec::new())
+    pub fn take_key(&mut self) -> ::bytes::Bytes {
+        ::std::mem::replace(&mut self.key, ::bytes::Bytes::new())
     }
     #[inline]
     pub fn clear_cf(&mut self) {
         self.cf.clear();
     }
     #[inline]
-    pub fn set_cf(&mut self, v: std::string::String) {
+    pub fn set_cf(&mut self, v: ::prost::BytesString) {
         self.cf = v;
     }
     #[inline]
@@ -3932,12 +3816,12 @@ impl RawGetRequest {
         &self.cf
     }
     #[inline]
-    pub fn mut_cf(&mut self) -> &mut std::string::String {
+    pub fn mut_cf(&mut self) -> &mut ::prost::BytesString {
         &mut self.cf
     }
     #[inline]
-    pub fn take_cf(&mut self) -> std::string::String {
-        ::std::mem::replace(&mut self.cf, ::std::string::String::new())
+    pub fn take_cf(&mut self) -> ::prost::BytesString {
+        ::std::mem::replace(&mut self.cf, ::prost::BytesString::new())
     }
 }
 impl ::protobuf::Clear for RawGetRequest {
@@ -3998,11 +3882,7 @@ impl ::protobuf::Message for RawGetRequest {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -4049,7 +3929,7 @@ impl RawGetResponse {
         self.error.clear();
     }
     #[inline]
-    pub fn set_error(&mut self, v: std::string::String) {
+    pub fn set_error(&mut self, v: ::prost::BytesString) {
         self.error = v;
     }
     #[inline]
@@ -4057,19 +3937,19 @@ impl RawGetResponse {
         &self.error
     }
     #[inline]
-    pub fn mut_error(&mut self) -> &mut std::string::String {
+    pub fn mut_error(&mut self) -> &mut ::prost::BytesString {
         &mut self.error
     }
     #[inline]
-    pub fn take_error(&mut self) -> std::string::String {
-        ::std::mem::replace(&mut self.error, ::std::string::String::new())
+    pub fn take_error(&mut self) -> ::prost::BytesString {
+        ::std::mem::replace(&mut self.error, ::prost::BytesString::new())
     }
     #[inline]
     pub fn clear_value(&mut self) {
         self.value.clear();
     }
     #[inline]
-    pub fn set_value(&mut self, v: std::vec::Vec<u8>) {
+    pub fn set_value(&mut self, v: ::bytes::Bytes) {
         self.value = v;
     }
     #[inline]
@@ -4077,12 +3957,12 @@ impl RawGetResponse {
         &self.value
     }
     #[inline]
-    pub fn mut_value(&mut self) -> &mut std::vec::Vec<u8> {
+    pub fn mut_value(&mut self) -> &mut ::bytes::Bytes {
         &mut self.value
     }
     #[inline]
-    pub fn take_value(&mut self) -> std::vec::Vec<u8> {
-        ::std::mem::replace(&mut self.value, ::std::vec::Vec::new())
+    pub fn take_value(&mut self) -> ::bytes::Bytes {
+        ::std::mem::replace(&mut self.value, ::bytes::Bytes::new())
     }
 }
 impl ::protobuf::Clear for RawGetResponse {
@@ -4143,11 +4023,7 @@ impl ::protobuf::Message for RawGetResponse {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -4194,7 +4070,7 @@ impl RawPutRequest {
         self.key.clear();
     }
     #[inline]
-    pub fn set_key(&mut self, v: std::vec::Vec<u8>) {
+    pub fn set_key(&mut self, v: ::bytes::Bytes) {
         self.key = v;
     }
     #[inline]
@@ -4202,19 +4078,19 @@ impl RawPutRequest {
         &self.key
     }
     #[inline]
-    pub fn mut_key(&mut self) -> &mut std::vec::Vec<u8> {
+    pub fn mut_key(&mut self) -> &mut ::bytes::Bytes {
         &mut self.key
     }
     #[inline]
-    pub fn take_key(&mut self) -> std::vec::Vec<u8> {
-        ::std::mem::replace(&mut self.key, ::std::vec::Vec::new())
+    pub fn take_key(&mut self) -> ::bytes::Bytes {
+        ::std::mem::replace(&mut self.key, ::bytes::Bytes::new())
     }
     #[inline]
     pub fn clear_value(&mut self) {
         self.value.clear();
     }
     #[inline]
-    pub fn set_value(&mut self, v: std::vec::Vec<u8>) {
+    pub fn set_value(&mut self, v: ::bytes::Bytes) {
         self.value = v;
     }
     #[inline]
@@ -4222,19 +4098,19 @@ impl RawPutRequest {
         &self.value
     }
     #[inline]
-    pub fn mut_value(&mut self) -> &mut std::vec::Vec<u8> {
+    pub fn mut_value(&mut self) -> &mut ::bytes::Bytes {
         &mut self.value
     }
     #[inline]
-    pub fn take_value(&mut self) -> std::vec::Vec<u8> {
-        ::std::mem::replace(&mut self.value, ::std::vec::Vec::new())
+    pub fn take_value(&mut self) -> ::bytes::Bytes {
+        ::std::mem::replace(&mut self.value, ::bytes::Bytes::new())
     }
     #[inline]
     pub fn clear_cf(&mut self) {
         self.cf.clear();
     }
     #[inline]
-    pub fn set_cf(&mut self, v: std::string::String) {
+    pub fn set_cf(&mut self, v: ::prost::BytesString) {
         self.cf = v;
     }
     #[inline]
@@ -4242,12 +4118,12 @@ impl RawPutRequest {
         &self.cf
     }
     #[inline]
-    pub fn mut_cf(&mut self) -> &mut std::string::String {
+    pub fn mut_cf(&mut self) -> &mut ::prost::BytesString {
         &mut self.cf
     }
     #[inline]
-    pub fn take_cf(&mut self) -> std::string::String {
-        ::std::mem::replace(&mut self.cf, ::std::string::String::new())
+    pub fn take_cf(&mut self) -> ::prost::BytesString {
+        ::std::mem::replace(&mut self.cf, ::prost::BytesString::new())
     }
 }
 impl ::protobuf::Clear for RawPutRequest {
@@ -4308,11 +4184,7 @@ impl ::protobuf::Message for RawPutRequest {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -4359,7 +4231,7 @@ impl RawPutResponse {
         self.error.clear();
     }
     #[inline]
-    pub fn set_error(&mut self, v: std::string::String) {
+    pub fn set_error(&mut self, v: ::prost::BytesString) {
         self.error = v;
     }
     #[inline]
@@ -4367,12 +4239,12 @@ impl RawPutResponse {
         &self.error
     }
     #[inline]
-    pub fn mut_error(&mut self) -> &mut std::string::String {
+    pub fn mut_error(&mut self) -> &mut ::prost::BytesString {
         &mut self.error
     }
     #[inline]
-    pub fn take_error(&mut self) -> std::string::String {
-        ::std::mem::replace(&mut self.error, ::std::string::String::new())
+    pub fn take_error(&mut self) -> ::prost::BytesString {
+        ::std::mem::replace(&mut self.error, ::prost::BytesString::new())
     }
 }
 impl ::protobuf::Clear for RawPutResponse {
@@ -4433,11 +4305,7 @@ impl ::protobuf::Message for RawPutResponse {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -4504,7 +4372,7 @@ impl RawBatchPutRequest {
         self.cf.clear();
     }
     #[inline]
-    pub fn set_cf(&mut self, v: std::string::String) {
+    pub fn set_cf(&mut self, v: ::prost::BytesString) {
         self.cf = v;
     }
     #[inline]
@@ -4512,12 +4380,12 @@ impl RawBatchPutRequest {
         &self.cf
     }
     #[inline]
-    pub fn mut_cf(&mut self) -> &mut std::string::String {
+    pub fn mut_cf(&mut self) -> &mut ::prost::BytesString {
         &mut self.cf
     }
     #[inline]
-    pub fn take_cf(&mut self) -> std::string::String {
-        ::std::mem::replace(&mut self.cf, ::std::string::String::new())
+    pub fn take_cf(&mut self) -> ::prost::BytesString {
+        ::std::mem::replace(&mut self.cf, ::prost::BytesString::new())
     }
 }
 impl ::protobuf::Clear for RawBatchPutRequest {
@@ -4578,11 +4446,7 @@ impl ::protobuf::Message for RawBatchPutRequest {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -4629,7 +4493,7 @@ impl RawBatchPutResponse {
         self.error.clear();
     }
     #[inline]
-    pub fn set_error(&mut self, v: std::string::String) {
+    pub fn set_error(&mut self, v: ::prost::BytesString) {
         self.error = v;
     }
     #[inline]
@@ -4637,12 +4501,12 @@ impl RawBatchPutResponse {
         &self.error
     }
     #[inline]
-    pub fn mut_error(&mut self) -> &mut std::string::String {
+    pub fn mut_error(&mut self) -> &mut ::prost::BytesString {
         &mut self.error
     }
     #[inline]
-    pub fn take_error(&mut self) -> std::string::String {
-        ::std::mem::replace(&mut self.error, ::std::string::String::new())
+    pub fn take_error(&mut self) -> ::prost::BytesString {
+        ::std::mem::replace(&mut self.error, ::prost::BytesString::new())
     }
 }
 impl ::protobuf::Clear for RawBatchPutResponse {
@@ -4703,11 +4567,7 @@ impl ::protobuf::Message for RawBatchPutResponse {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -4754,19 +4614,19 @@ impl RawBatchGetRequest {
         self.keys.clear();
     }
     #[inline]
-    pub fn set_keys(&mut self, v: ::std::vec::Vec<std::vec::Vec<u8>>) {
+    pub fn set_keys(&mut self, v: ::std::vec::Vec<::bytes::Bytes>) {
         self.keys = v;
     }
     #[inline]
-    pub fn get_keys(&self) -> &::std::vec::Vec<std::vec::Vec<u8>> {
+    pub fn get_keys(&self) -> &::std::vec::Vec<::bytes::Bytes> {
         &self.keys
     }
     #[inline]
-    pub fn mut_keys(&mut self) -> &mut ::std::vec::Vec<std::vec::Vec<u8>> {
+    pub fn mut_keys(&mut self) -> &mut ::std::vec::Vec<::bytes::Bytes> {
         &mut self.keys
     }
     #[inline]
-    pub fn take_keys(&mut self) -> ::std::vec::Vec<std::vec::Vec<u8>> {
+    pub fn take_keys(&mut self) -> ::std::vec::Vec<::bytes::Bytes> {
         ::std::mem::replace(&mut self.keys, ::std::vec::Vec::new())
     }
     #[inline]
@@ -4774,7 +4634,7 @@ impl RawBatchGetRequest {
         self.cf.clear();
     }
     #[inline]
-    pub fn set_cf(&mut self, v: std::string::String) {
+    pub fn set_cf(&mut self, v: ::prost::BytesString) {
         self.cf = v;
     }
     #[inline]
@@ -4782,12 +4642,12 @@ impl RawBatchGetRequest {
         &self.cf
     }
     #[inline]
-    pub fn mut_cf(&mut self) -> &mut std::string::String {
+    pub fn mut_cf(&mut self) -> &mut ::prost::BytesString {
         &mut self.cf
     }
     #[inline]
-    pub fn take_cf(&mut self) -> std::string::String {
-        ::std::mem::replace(&mut self.cf, ::std::string::String::new())
+    pub fn take_cf(&mut self) -> ::prost::BytesString {
+        ::std::mem::replace(&mut self.cf, ::prost::BytesString::new())
     }
 }
 impl ::protobuf::Clear for RawBatchGetRequest {
@@ -4848,11 +4708,7 @@ impl ::protobuf::Message for RawBatchGetRequest {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -4973,11 +4829,7 @@ impl ::protobuf::Message for RawBatchGetResponse {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -5024,7 +4876,7 @@ impl RawDeleteRequest {
         self.key.clear();
     }
     #[inline]
-    pub fn set_key(&mut self, v: std::vec::Vec<u8>) {
+    pub fn set_key(&mut self, v: ::bytes::Bytes) {
         self.key = v;
     }
     #[inline]
@@ -5032,19 +4884,19 @@ impl RawDeleteRequest {
         &self.key
     }
     #[inline]
-    pub fn mut_key(&mut self) -> &mut std::vec::Vec<u8> {
+    pub fn mut_key(&mut self) -> &mut ::bytes::Bytes {
         &mut self.key
     }
     #[inline]
-    pub fn take_key(&mut self) -> std::vec::Vec<u8> {
-        ::std::mem::replace(&mut self.key, ::std::vec::Vec::new())
+    pub fn take_key(&mut self) -> ::bytes::Bytes {
+        ::std::mem::replace(&mut self.key, ::bytes::Bytes::new())
     }
     #[inline]
     pub fn clear_cf(&mut self) {
         self.cf.clear();
     }
     #[inline]
-    pub fn set_cf(&mut self, v: std::string::String) {
+    pub fn set_cf(&mut self, v: ::prost::BytesString) {
         self.cf = v;
     }
     #[inline]
@@ -5052,12 +4904,12 @@ impl RawDeleteRequest {
         &self.cf
     }
     #[inline]
-    pub fn mut_cf(&mut self) -> &mut std::string::String {
+    pub fn mut_cf(&mut self) -> &mut ::prost::BytesString {
         &mut self.cf
     }
     #[inline]
-    pub fn take_cf(&mut self) -> std::string::String {
-        ::std::mem::replace(&mut self.cf, ::std::string::String::new())
+    pub fn take_cf(&mut self) -> ::prost::BytesString {
+        ::std::mem::replace(&mut self.cf, ::prost::BytesString::new())
     }
 }
 impl ::protobuf::Clear for RawDeleteRequest {
@@ -5118,11 +4970,7 @@ impl ::protobuf::Message for RawDeleteRequest {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -5169,7 +5017,7 @@ impl RawDeleteResponse {
         self.error.clear();
     }
     #[inline]
-    pub fn set_error(&mut self, v: std::string::String) {
+    pub fn set_error(&mut self, v: ::prost::BytesString) {
         self.error = v;
     }
     #[inline]
@@ -5177,12 +5025,12 @@ impl RawDeleteResponse {
         &self.error
     }
     #[inline]
-    pub fn mut_error(&mut self) -> &mut std::string::String {
+    pub fn mut_error(&mut self) -> &mut ::prost::BytesString {
         &mut self.error
     }
     #[inline]
-    pub fn take_error(&mut self) -> std::string::String {
-        ::std::mem::replace(&mut self.error, ::std::string::String::new())
+    pub fn take_error(&mut self) -> ::prost::BytesString {
+        ::std::mem::replace(&mut self.error, ::prost::BytesString::new())
     }
 }
 impl ::protobuf::Clear for RawDeleteResponse {
@@ -5243,11 +5091,7 @@ impl ::protobuf::Message for RawDeleteResponse {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -5294,19 +5138,19 @@ impl RawBatchDeleteRequest {
         self.keys.clear();
     }
     #[inline]
-    pub fn set_keys(&mut self, v: ::std::vec::Vec<std::vec::Vec<u8>>) {
+    pub fn set_keys(&mut self, v: ::std::vec::Vec<::bytes::Bytes>) {
         self.keys = v;
     }
     #[inline]
-    pub fn get_keys(&self) -> &::std::vec::Vec<std::vec::Vec<u8>> {
+    pub fn get_keys(&self) -> &::std::vec::Vec<::bytes::Bytes> {
         &self.keys
     }
     #[inline]
-    pub fn mut_keys(&mut self) -> &mut ::std::vec::Vec<std::vec::Vec<u8>> {
+    pub fn mut_keys(&mut self) -> &mut ::std::vec::Vec<::bytes::Bytes> {
         &mut self.keys
     }
     #[inline]
-    pub fn take_keys(&mut self) -> ::std::vec::Vec<std::vec::Vec<u8>> {
+    pub fn take_keys(&mut self) -> ::std::vec::Vec<::bytes::Bytes> {
         ::std::mem::replace(&mut self.keys, ::std::vec::Vec::new())
     }
     #[inline]
@@ -5314,7 +5158,7 @@ impl RawBatchDeleteRequest {
         self.cf.clear();
     }
     #[inline]
-    pub fn set_cf(&mut self, v: std::string::String) {
+    pub fn set_cf(&mut self, v: ::prost::BytesString) {
         self.cf = v;
     }
     #[inline]
@@ -5322,12 +5166,12 @@ impl RawBatchDeleteRequest {
         &self.cf
     }
     #[inline]
-    pub fn mut_cf(&mut self) -> &mut std::string::String {
+    pub fn mut_cf(&mut self) -> &mut ::prost::BytesString {
         &mut self.cf
     }
     #[inline]
-    pub fn take_cf(&mut self) -> std::string::String {
-        ::std::mem::replace(&mut self.cf, ::std::string::String::new())
+    pub fn take_cf(&mut self) -> ::prost::BytesString {
+        ::std::mem::replace(&mut self.cf, ::prost::BytesString::new())
     }
 }
 impl ::protobuf::Clear for RawBatchDeleteRequest {
@@ -5388,11 +5232,7 @@ impl ::protobuf::Message for RawBatchDeleteRequest {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -5439,7 +5279,7 @@ impl RawBatchDeleteResponse {
         self.error.clear();
     }
     #[inline]
-    pub fn set_error(&mut self, v: std::string::String) {
+    pub fn set_error(&mut self, v: ::prost::BytesString) {
         self.error = v;
     }
     #[inline]
@@ -5447,12 +5287,12 @@ impl RawBatchDeleteResponse {
         &self.error
     }
     #[inline]
-    pub fn mut_error(&mut self) -> &mut std::string::String {
+    pub fn mut_error(&mut self) -> &mut ::prost::BytesString {
         &mut self.error
     }
     #[inline]
-    pub fn take_error(&mut self) -> std::string::String {
-        ::std::mem::replace(&mut self.error, ::std::string::String::new())
+    pub fn take_error(&mut self) -> ::prost::BytesString {
+        ::std::mem::replace(&mut self.error, ::prost::BytesString::new())
     }
 }
 impl ::protobuf::Clear for RawBatchDeleteResponse {
@@ -5513,11 +5353,7 @@ impl ::protobuf::Message for RawBatchDeleteResponse {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -5564,7 +5400,7 @@ impl DeleteRangeRequest {
         self.start_key.clear();
     }
     #[inline]
-    pub fn set_start_key(&mut self, v: std::vec::Vec<u8>) {
+    pub fn set_start_key(&mut self, v: ::bytes::Bytes) {
         self.start_key = v;
     }
     #[inline]
@@ -5572,19 +5408,19 @@ impl DeleteRangeRequest {
         &self.start_key
     }
     #[inline]
-    pub fn mut_start_key(&mut self) -> &mut std::vec::Vec<u8> {
+    pub fn mut_start_key(&mut self) -> &mut ::bytes::Bytes {
         &mut self.start_key
     }
     #[inline]
-    pub fn take_start_key(&mut self) -> std::vec::Vec<u8> {
-        ::std::mem::replace(&mut self.start_key, ::std::vec::Vec::new())
+    pub fn take_start_key(&mut self) -> ::bytes::Bytes {
+        ::std::mem::replace(&mut self.start_key, ::bytes::Bytes::new())
     }
     #[inline]
     pub fn clear_end_key(&mut self) {
         self.end_key.clear();
     }
     #[inline]
-    pub fn set_end_key(&mut self, v: std::vec::Vec<u8>) {
+    pub fn set_end_key(&mut self, v: ::bytes::Bytes) {
         self.end_key = v;
     }
     #[inline]
@@ -5592,12 +5428,12 @@ impl DeleteRangeRequest {
         &self.end_key
     }
     #[inline]
-    pub fn mut_end_key(&mut self) -> &mut std::vec::Vec<u8> {
+    pub fn mut_end_key(&mut self) -> &mut ::bytes::Bytes {
         &mut self.end_key
     }
     #[inline]
-    pub fn take_end_key(&mut self) -> std::vec::Vec<u8> {
-        ::std::mem::replace(&mut self.end_key, ::std::vec::Vec::new())
+    pub fn take_end_key(&mut self) -> ::bytes::Bytes {
+        ::std::mem::replace(&mut self.end_key, ::bytes::Bytes::new())
     }
 }
 impl ::protobuf::Clear for DeleteRangeRequest {
@@ -5658,11 +5494,7 @@ impl ::protobuf::Message for DeleteRangeRequest {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -5709,7 +5541,7 @@ impl DeleteRangeResponse {
         self.error.clear();
     }
     #[inline]
-    pub fn set_error(&mut self, v: std::string::String) {
+    pub fn set_error(&mut self, v: ::prost::BytesString) {
         self.error = v;
     }
     #[inline]
@@ -5717,12 +5549,12 @@ impl DeleteRangeResponse {
         &self.error
     }
     #[inline]
-    pub fn mut_error(&mut self) -> &mut std::string::String {
+    pub fn mut_error(&mut self) -> &mut ::prost::BytesString {
         &mut self.error
     }
     #[inline]
-    pub fn take_error(&mut self) -> std::string::String {
-        ::std::mem::replace(&mut self.error, ::std::string::String::new())
+    pub fn take_error(&mut self) -> ::prost::BytesString {
+        ::std::mem::replace(&mut self.error, ::prost::BytesString::new())
     }
 }
 impl ::protobuf::Clear for DeleteRangeResponse {
@@ -5783,11 +5615,7 @@ impl ::protobuf::Message for DeleteRangeResponse {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -5870,11 +5698,7 @@ impl ::protobuf::Message for NotLeader {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -5969,11 +5793,7 @@ impl ::protobuf::Message for StoreNotMatch {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -6056,11 +5876,7 @@ impl ::protobuf::Message for RegionNotFound {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -6077,7 +5893,7 @@ impl KeyNotInRegion {
         self.key.clear();
     }
     #[inline]
-    pub fn set_key(&mut self, v: std::vec::Vec<u8>) {
+    pub fn set_key(&mut self, v: ::bytes::Bytes) {
         self.key = v;
     }
     #[inline]
@@ -6085,12 +5901,12 @@ impl KeyNotInRegion {
         &self.key
     }
     #[inline]
-    pub fn mut_key(&mut self) -> &mut std::vec::Vec<u8> {
+    pub fn mut_key(&mut self) -> &mut ::bytes::Bytes {
         &mut self.key
     }
     #[inline]
-    pub fn take_key(&mut self) -> std::vec::Vec<u8> {
-        ::std::mem::replace(&mut self.key, ::std::vec::Vec::new())
+    pub fn take_key(&mut self) -> ::bytes::Bytes {
+        ::std::mem::replace(&mut self.key, ::bytes::Bytes::new())
     }
     #[inline]
     pub fn clear_region_id(&mut self) {
@@ -6109,7 +5925,7 @@ impl KeyNotInRegion {
         self.start_key.clear();
     }
     #[inline]
-    pub fn set_start_key(&mut self, v: std::vec::Vec<u8>) {
+    pub fn set_start_key(&mut self, v: ::bytes::Bytes) {
         self.start_key = v;
     }
     #[inline]
@@ -6117,19 +5933,19 @@ impl KeyNotInRegion {
         &self.start_key
     }
     #[inline]
-    pub fn mut_start_key(&mut self) -> &mut std::vec::Vec<u8> {
+    pub fn mut_start_key(&mut self) -> &mut ::bytes::Bytes {
         &mut self.start_key
     }
     #[inline]
-    pub fn take_start_key(&mut self) -> std::vec::Vec<u8> {
-        ::std::mem::replace(&mut self.start_key, ::std::vec::Vec::new())
+    pub fn take_start_key(&mut self) -> ::bytes::Bytes {
+        ::std::mem::replace(&mut self.start_key, ::bytes::Bytes::new())
     }
     #[inline]
     pub fn clear_end_key(&mut self) {
         self.end_key.clear();
     }
     #[inline]
-    pub fn set_end_key(&mut self, v: std::vec::Vec<u8>) {
+    pub fn set_end_key(&mut self, v: ::bytes::Bytes) {
         self.end_key = v;
     }
     #[inline]
@@ -6137,12 +5953,12 @@ impl KeyNotInRegion {
         &self.end_key
     }
     #[inline]
-    pub fn mut_end_key(&mut self) -> &mut std::vec::Vec<u8> {
+    pub fn mut_end_key(&mut self) -> &mut ::bytes::Bytes {
         &mut self.end_key
     }
     #[inline]
-    pub fn take_end_key(&mut self) -> std::vec::Vec<u8> {
-        ::std::mem::replace(&mut self.end_key, ::std::vec::Vec::new())
+    pub fn take_end_key(&mut self) -> ::bytes::Bytes {
+        ::std::mem::replace(&mut self.end_key, ::bytes::Bytes::new())
     }
 }
 impl ::protobuf::Clear for KeyNotInRegion {
@@ -6203,11 +6019,7 @@ impl ::protobuf::Message for KeyNotInRegion {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -6224,7 +6036,7 @@ impl ServerIsBusy {
         self.reason.clear();
     }
     #[inline]
-    pub fn set_reason(&mut self, v: std::string::String) {
+    pub fn set_reason(&mut self, v: ::prost::BytesString) {
         self.reason = v;
     }
     #[inline]
@@ -6232,12 +6044,12 @@ impl ServerIsBusy {
         &self.reason
     }
     #[inline]
-    pub fn mut_reason(&mut self) -> &mut std::string::String {
+    pub fn mut_reason(&mut self) -> &mut ::prost::BytesString {
         &mut self.reason
     }
     #[inline]
-    pub fn take_reason(&mut self) -> std::string::String {
-        ::std::mem::replace(&mut self.reason, ::std::string::String::new())
+    pub fn take_reason(&mut self) -> ::prost::BytesString {
+        ::std::mem::replace(&mut self.reason, ::prost::BytesString::new())
     }
     #[inline]
     pub fn clear_backoff_ms(&mut self) {
@@ -6310,11 +6122,7 @@ impl ::protobuf::Message for ServerIsBusy {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -6385,11 +6193,7 @@ impl ::protobuf::Message for StaleCommand {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -6484,11 +6288,7 @@ impl ::protobuf::Message for RaftEntryTooLarge {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -6505,7 +6305,7 @@ impl Error {
         self.message.clear();
     }
     #[inline]
-    pub fn set_message(&mut self, v: std::string::String) {
+    pub fn set_message(&mut self, v: ::prost::BytesString) {
         self.message = v;
     }
     #[inline]
@@ -6513,12 +6313,12 @@ impl Error {
         &self.message
     }
     #[inline]
-    pub fn mut_message(&mut self) -> &mut std::string::String {
+    pub fn mut_message(&mut self) -> &mut ::prost::BytesString {
         &mut self.message
     }
     #[inline]
-    pub fn take_message(&mut self) -> std::string::String {
-        ::std::mem::replace(&mut self.message, ::std::string::String::new())
+    pub fn take_message(&mut self) -> ::prost::BytesString {
+        ::std::mem::replace(&mut self.message, ::prost::BytesString::new())
     }
     #[inline]
     pub fn has_not_leader(&self) -> bool {
@@ -6801,11 +6601,7 @@ impl ::protobuf::Message for Error {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -7034,11 +6830,7 @@ impl ::protobuf::Message for Context {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -7133,11 +6925,7 @@ impl ::protobuf::Message for RegionEpoch {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -7244,11 +7032,7 @@ impl ::protobuf::Message for Peer {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -7295,7 +7079,7 @@ impl KeyError {
         self.retryable.clear();
     }
     #[inline]
-    pub fn set_retryable(&mut self, v: std::string::String) {
+    pub fn set_retryable(&mut self, v: ::prost::BytesString) {
         self.retryable = v;
     }
     #[inline]
@@ -7303,19 +7087,19 @@ impl KeyError {
         &self.retryable
     }
     #[inline]
-    pub fn mut_retryable(&mut self) -> &mut std::string::String {
+    pub fn mut_retryable(&mut self) -> &mut ::prost::BytesString {
         &mut self.retryable
     }
     #[inline]
-    pub fn take_retryable(&mut self) -> std::string::String {
-        ::std::mem::replace(&mut self.retryable, ::std::string::String::new())
+    pub fn take_retryable(&mut self) -> ::prost::BytesString {
+        ::std::mem::replace(&mut self.retryable, ::prost::BytesString::new())
     }
     #[inline]
     pub fn clear_abort(&mut self) {
         self.abort.clear();
     }
     #[inline]
-    pub fn set_abort(&mut self, v: std::string::String) {
+    pub fn set_abort(&mut self, v: ::prost::BytesString) {
         self.abort = v;
     }
     #[inline]
@@ -7323,12 +7107,12 @@ impl KeyError {
         &self.abort
     }
     #[inline]
-    pub fn mut_abort(&mut self) -> &mut std::string::String {
+    pub fn mut_abort(&mut self) -> &mut ::prost::BytesString {
         &mut self.abort
     }
     #[inline]
-    pub fn take_abort(&mut self) -> std::string::String {
-        ::std::mem::replace(&mut self.abort, ::std::string::String::new())
+    pub fn take_abort(&mut self) -> ::prost::BytesString {
+        ::std::mem::replace(&mut self.abort, ::prost::BytesString::new())
     }
     #[inline]
     pub fn has_conflict(&self) -> bool {
@@ -7451,11 +7235,7 @@ impl ::protobuf::Message for KeyError {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -7472,7 +7252,7 @@ impl LockInfo {
         self.primary_lock.clear();
     }
     #[inline]
-    pub fn set_primary_lock(&mut self, v: std::vec::Vec<u8>) {
+    pub fn set_primary_lock(&mut self, v: ::bytes::Bytes) {
         self.primary_lock = v;
     }
     #[inline]
@@ -7480,12 +7260,12 @@ impl LockInfo {
         &self.primary_lock
     }
     #[inline]
-    pub fn mut_primary_lock(&mut self) -> &mut std::vec::Vec<u8> {
+    pub fn mut_primary_lock(&mut self) -> &mut ::bytes::Bytes {
         &mut self.primary_lock
     }
     #[inline]
-    pub fn take_primary_lock(&mut self) -> std::vec::Vec<u8> {
-        ::std::mem::replace(&mut self.primary_lock, ::std::vec::Vec::new())
+    pub fn take_primary_lock(&mut self) -> ::bytes::Bytes {
+        ::std::mem::replace(&mut self.primary_lock, ::bytes::Bytes::new())
     }
     #[inline]
     pub fn clear_lock_version(&mut self) {
@@ -7504,7 +7284,7 @@ impl LockInfo {
         self.key.clear();
     }
     #[inline]
-    pub fn set_key(&mut self, v: std::vec::Vec<u8>) {
+    pub fn set_key(&mut self, v: ::bytes::Bytes) {
         self.key = v;
     }
     #[inline]
@@ -7512,12 +7292,12 @@ impl LockInfo {
         &self.key
     }
     #[inline]
-    pub fn mut_key(&mut self) -> &mut std::vec::Vec<u8> {
+    pub fn mut_key(&mut self) -> &mut ::bytes::Bytes {
         &mut self.key
     }
     #[inline]
-    pub fn take_key(&mut self) -> std::vec::Vec<u8> {
-        ::std::mem::replace(&mut self.key, ::std::vec::Vec::new())
+    pub fn take_key(&mut self) -> ::bytes::Bytes {
+        ::std::mem::replace(&mut self.key, ::bytes::Bytes::new())
     }
     #[inline]
     pub fn clear_lock_ttl(&mut self) {
@@ -7590,11 +7370,7 @@ impl ::protobuf::Message for LockInfo {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -7611,7 +7387,7 @@ impl AlreadyExist {
         self.key.clear();
     }
     #[inline]
-    pub fn set_key(&mut self, v: std::vec::Vec<u8>) {
+    pub fn set_key(&mut self, v: ::bytes::Bytes) {
         self.key = v;
     }
     #[inline]
@@ -7619,12 +7395,12 @@ impl AlreadyExist {
         &self.key
     }
     #[inline]
-    pub fn mut_key(&mut self) -> &mut std::vec::Vec<u8> {
+    pub fn mut_key(&mut self) -> &mut ::bytes::Bytes {
         &mut self.key
     }
     #[inline]
-    pub fn take_key(&mut self) -> std::vec::Vec<u8> {
-        ::std::mem::replace(&mut self.key, ::std::vec::Vec::new())
+    pub fn take_key(&mut self) -> ::bytes::Bytes {
+        ::std::mem::replace(&mut self.key, ::bytes::Bytes::new())
     }
 }
 impl ::protobuf::Clear for AlreadyExist {
@@ -7685,11 +7461,7 @@ impl ::protobuf::Message for AlreadyExist {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));
@@ -7730,7 +7502,7 @@ impl WriteConflict {
         self.key.clear();
     }
     #[inline]
-    pub fn set_key(&mut self, v: std::vec::Vec<u8>) {
+    pub fn set_key(&mut self, v: ::bytes::Bytes) {
         self.key = v;
     }
     #[inline]
@@ -7738,19 +7510,19 @@ impl WriteConflict {
         &self.key
     }
     #[inline]
-    pub fn mut_key(&mut self) -> &mut std::vec::Vec<u8> {
+    pub fn mut_key(&mut self) -> &mut ::bytes::Bytes {
         &mut self.key
     }
     #[inline]
-    pub fn take_key(&mut self) -> std::vec::Vec<u8> {
-        ::std::mem::replace(&mut self.key, ::std::vec::Vec::new())
+    pub fn take_key(&mut self) -> ::bytes::Bytes {
+        ::std::mem::replace(&mut self.key, ::bytes::Bytes::new())
     }
     #[inline]
     pub fn clear_primary(&mut self) {
         self.primary.clear();
     }
     #[inline]
-    pub fn set_primary(&mut self, v: std::vec::Vec<u8>) {
+    pub fn set_primary(&mut self, v: ::bytes::Bytes) {
         self.primary = v;
     }
     #[inline]
@@ -7758,12 +7530,12 @@ impl WriteConflict {
         &self.primary
     }
     #[inline]
-    pub fn mut_primary(&mut self) -> &mut std::vec::Vec<u8> {
+    pub fn mut_primary(&mut self) -> &mut ::bytes::Bytes {
         &mut self.primary
     }
     #[inline]
-    pub fn take_primary(&mut self) -> std::vec::Vec<u8> {
-        ::std::mem::replace(&mut self.primary, ::std::vec::Vec::new())
+    pub fn take_primary(&mut self) -> ::bytes::Bytes {
+        ::std::mem::replace(&mut self.primary, ::bytes::Bytes::new())
     }
 }
 impl ::protobuf::Clear for WriteConflict {
@@ -7824,11 +7596,7 @@ impl ::protobuf::Message for WriteConflict {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));

@@ -45,18 +45,18 @@ pub struct RawGetRequest {
     #[prost(message, optional, tag = "1")]
     pub context: ::std::option::Option<Context>,
     #[prost(bytes, tag = "2")]
-    pub key: std::vec::Vec<u8>,
+    pub key: ::bytes::Bytes,
     #[prost(string, tag = "3")]
-    pub cf: std::string::String,
+    pub cf: ::prost::BytesString,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RawGetResponse {
     #[prost(message, optional, tag = "1")]
     pub region_error: ::std::option::Option<Error>,
     #[prost(string, tag = "2")]
-    pub error: std::string::String,
+    pub error: ::prost::BytesString,
     #[prost(bytes, tag = "3")]
-    pub value: std::vec::Vec<u8>,
+    pub value: ::bytes::Bytes,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Context {
@@ -100,7 +100,7 @@ pub struct Peer {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Error {
     #[prost(string, tag = "1")]
-    pub message: std::string::String,
+    pub message: ::prost::BytesString,
     #[prost(message, optional, tag = "2")]
     pub not_leader: ::std::option::Option<NotLeader>,
 }
@@ -227,7 +227,7 @@ pub fn create_tikv<S: Tikv + Send + Clone + 'static>(s: S) -> ::grpcio::Service 
     builder = builder.add_unary_handler(&METHOD_TIKV_RAW_GET, move |ctx, req, resp| {
         instance.raw_get(ctx, req, resp)
     });
-    let mut instance = s.clone();
+    let mut instance = s;
     builder = builder
         .add_duplex_streaming_handler(&METHOD_TIKV_BATCH_COMMANDS, move |ctx, req, resp| {
             instance.batch_commands(ctx, req, resp)

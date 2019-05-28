@@ -63,7 +63,7 @@ pub trait Simple {
 
 pub fn create_simple<S: Simple + Send + Clone + 'static>(s: S) -> ::grpcio::Service {
     let mut builder = ::grpcio::ServiceBuilder::new();
-    let mut instance = s.clone();
+    let mut instance = s;
     builder = builder.add_unary_handler(&METHOD_SIMPLE_FOO, move |ctx, req, resp| {
         instance.foo(ctx, req, resp)
     });

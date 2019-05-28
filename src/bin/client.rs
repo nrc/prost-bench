@@ -58,7 +58,7 @@ fn init_prost_simple(ch: Channel) -> (simple_prost::Data, simple_prost::SimpleCl
     let client = simple_prost::SimpleClient::new(ch);
 
     let mut req = simple_prost::Data::new_();
-    req.payload = vec![42; MSG_SIZE];
+    //req.payload = vec![42; MSG_SIZE];
 
     (req, client)
 }
@@ -872,7 +872,7 @@ fn terminate() {
     let ch = ChannelBuilder::new(env).connect("localhost:50051");
     let client = simple_prost::SimpleClient::new(ch);
     let mut req = simple_prost::Data::new_();
-    req.set_payload(vec![1]);
+    // req.set_payload(vec![1]);
     let reply = client.foo_async(&req).expect("rpc");
     let _ = reply.wait().expect("future");
 }

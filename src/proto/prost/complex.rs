@@ -94,7 +94,7 @@ pub struct GetRequest {
     #[prost(message, optional, tag = "1")]
     pub context: ::std::option::Option<Context>,
     #[prost(bytes, tag = "2")]
-    pub key: std::vec::Vec<u8>,
+    pub key: ::bytes::Bytes,
     #[prost(uint64, tag = "3")]
     pub version: u64,
 }
@@ -105,14 +105,14 @@ pub struct GetResponse {
     #[prost(message, optional, tag = "2")]
     pub error: ::std::option::Option<KeyError>,
     #[prost(bytes, tag = "3")]
-    pub value: std::vec::Vec<u8>,
+    pub value: ::bytes::Bytes,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ScanRequest {
     #[prost(message, optional, tag = "1")]
     pub context: ::std::option::Option<Context>,
     #[prost(bytes, tag = "2")]
-    pub start_key: std::vec::Vec<u8>,
+    pub start_key: ::bytes::Bytes,
     #[prost(uint32, tag = "3")]
     pub limit: u32,
     #[prost(uint64, tag = "4")]
@@ -124,16 +124,16 @@ pub struct ScanRequest {
     /// For compatibility, when scanning forward, the range to scan is [start_key, end_key), where start_key < end_key;
     /// and when scanning backward, it scans [end_key, start_key) in descending order, where end_key < start_key.
     #[prost(bytes, tag = "7")]
-    pub end_key: std::vec::Vec<u8>,
+    pub end_key: ::bytes::Bytes,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct KvPair {
     #[prost(message, optional, tag = "1")]
     pub error: ::std::option::Option<KeyError>,
     #[prost(bytes, tag = "2")]
-    pub key: std::vec::Vec<u8>,
+    pub key: ::bytes::Bytes,
     #[prost(bytes, tag = "3")]
-    pub value: std::vec::Vec<u8>,
+    pub value: ::bytes::Bytes,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ScanResponse {
@@ -147,9 +147,9 @@ pub struct Mutation {
     #[prost(enumeration = "Op", tag = "1")]
     pub op: i32,
     #[prost(bytes, tag = "2")]
-    pub key: std::vec::Vec<u8>,
+    pub key: ::bytes::Bytes,
     #[prost(bytes, tag = "3")]
-    pub value: std::vec::Vec<u8>,
+    pub value: ::bytes::Bytes,
     #[prost(enumeration = "Assertion", tag = "4")]
     pub assertion: i32,
 }
@@ -161,7 +161,7 @@ pub struct PrewriteRequest {
     pub mutations: ::std::vec::Vec<Mutation>,
     /// primary_lock_key
     #[prost(bytes, tag = "3")]
-    pub primary_lock: std::vec::Vec<u8>,
+    pub primary_lock: ::bytes::Bytes,
     #[prost(uint64, tag = "4")]
     pub start_version: u64,
     #[prost(uint64, tag = "5")]
@@ -183,7 +183,7 @@ pub struct CommitRequest {
     #[prost(uint64, tag = "2")]
     pub start_version: u64,
     #[prost(bytes, repeated, tag = "3")]
-    pub keys: ::std::vec::Vec<std::vec::Vec<u8>>,
+    pub keys: ::std::vec::Vec<::bytes::Bytes>,
     #[prost(uint64, tag = "4")]
     pub commit_version: u64,
 }
@@ -206,7 +206,7 @@ pub struct ImportResponse {
     #[prost(message, optional, tag = "1")]
     pub region_error: ::std::option::Option<Error>,
     #[prost(string, tag = "2")]
-    pub error: std::string::String,
+    pub error: ::prost::BytesString,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct BatchRollbackRequest {
@@ -215,7 +215,7 @@ pub struct BatchRollbackRequest {
     #[prost(uint64, tag = "2")]
     pub start_version: u64,
     #[prost(bytes, repeated, tag = "3")]
-    pub keys: ::std::vec::Vec<std::vec::Vec<u8>>,
+    pub keys: ::std::vec::Vec<::bytes::Bytes>,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct BatchRollbackResponse {
@@ -229,7 +229,7 @@ pub struct CleanupRequest {
     #[prost(message, optional, tag = "1")]
     pub context: ::std::option::Option<Context>,
     #[prost(bytes, tag = "2")]
-    pub key: std::vec::Vec<u8>,
+    pub key: ::bytes::Bytes,
     #[prost(uint64, tag = "3")]
     pub start_version: u64,
 }
@@ -248,7 +248,7 @@ pub struct BatchGetRequest {
     #[prost(message, optional, tag = "1")]
     pub context: ::std::option::Option<Context>,
     #[prost(bytes, repeated, tag = "2")]
-    pub keys: ::std::vec::Vec<std::vec::Vec<u8>>,
+    pub keys: ::std::vec::Vec<::bytes::Bytes>,
     #[prost(uint64, tag = "3")]
     pub version: u64,
 }
@@ -266,7 +266,7 @@ pub struct ScanLockRequest {
     #[prost(uint64, tag = "2")]
     pub max_version: u64,
     #[prost(bytes, tag = "3")]
-    pub start_key: std::vec::Vec<u8>,
+    pub start_key: ::bytes::Bytes,
     #[prost(uint32, tag = "4")]
     pub limit: u32,
 }
@@ -324,36 +324,36 @@ pub struct RawGetRequest {
     #[prost(message, optional, tag = "1")]
     pub context: ::std::option::Option<Context>,
     #[prost(bytes, tag = "2")]
-    pub key: std::vec::Vec<u8>,
+    pub key: ::bytes::Bytes,
     #[prost(string, tag = "3")]
-    pub cf: std::string::String,
+    pub cf: ::prost::BytesString,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RawGetResponse {
     #[prost(message, optional, tag = "1")]
     pub region_error: ::std::option::Option<Error>,
     #[prost(string, tag = "2")]
-    pub error: std::string::String,
+    pub error: ::prost::BytesString,
     #[prost(bytes, tag = "3")]
-    pub value: std::vec::Vec<u8>,
+    pub value: ::bytes::Bytes,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RawPutRequest {
     #[prost(message, optional, tag = "1")]
     pub context: ::std::option::Option<Context>,
     #[prost(bytes, tag = "2")]
-    pub key: std::vec::Vec<u8>,
+    pub key: ::bytes::Bytes,
     #[prost(bytes, tag = "3")]
-    pub value: std::vec::Vec<u8>,
+    pub value: ::bytes::Bytes,
     #[prost(string, tag = "4")]
-    pub cf: std::string::String,
+    pub cf: ::prost::BytesString,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RawPutResponse {
     #[prost(message, optional, tag = "1")]
     pub region_error: ::std::option::Option<Error>,
     #[prost(string, tag = "2")]
-    pub error: std::string::String,
+    pub error: ::prost::BytesString,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RawBatchPutRequest {
@@ -362,23 +362,23 @@ pub struct RawBatchPutRequest {
     #[prost(message, repeated, tag = "2")]
     pub pairs: ::std::vec::Vec<KvPair>,
     #[prost(string, tag = "3")]
-    pub cf: std::string::String,
+    pub cf: ::prost::BytesString,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RawBatchPutResponse {
     #[prost(message, optional, tag = "1")]
     pub region_error: ::std::option::Option<Error>,
     #[prost(string, tag = "2")]
-    pub error: std::string::String,
+    pub error: ::prost::BytesString,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RawBatchGetRequest {
     #[prost(message, optional, tag = "1")]
     pub context: ::std::option::Option<Context>,
     #[prost(bytes, repeated, tag = "2")]
-    pub keys: ::std::vec::Vec<std::vec::Vec<u8>>,
+    pub keys: ::std::vec::Vec<::bytes::Bytes>,
     #[prost(string, tag = "3")]
-    pub cf: std::string::String,
+    pub cf: ::prost::BytesString,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RawBatchGetResponse {
@@ -392,48 +392,48 @@ pub struct RawDeleteRequest {
     #[prost(message, optional, tag = "1")]
     pub context: ::std::option::Option<Context>,
     #[prost(bytes, tag = "2")]
-    pub key: std::vec::Vec<u8>,
+    pub key: ::bytes::Bytes,
     #[prost(string, tag = "3")]
-    pub cf: std::string::String,
+    pub cf: ::prost::BytesString,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RawDeleteResponse {
     #[prost(message, optional, tag = "1")]
     pub region_error: ::std::option::Option<Error>,
     #[prost(string, tag = "2")]
-    pub error: std::string::String,
+    pub error: ::prost::BytesString,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RawBatchDeleteRequest {
     #[prost(message, optional, tag = "1")]
     pub context: ::std::option::Option<Context>,
     #[prost(bytes, repeated, tag = "2")]
-    pub keys: ::std::vec::Vec<std::vec::Vec<u8>>,
+    pub keys: ::std::vec::Vec<::bytes::Bytes>,
     #[prost(string, tag = "3")]
-    pub cf: std::string::String,
+    pub cf: ::prost::BytesString,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RawBatchDeleteResponse {
     #[prost(message, optional, tag = "1")]
     pub region_error: ::std::option::Option<Error>,
     #[prost(string, tag = "2")]
-    pub error: std::string::String,
+    pub error: ::prost::BytesString,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DeleteRangeRequest {
     #[prost(message, optional, tag = "1")]
     pub context: ::std::option::Option<Context>,
     #[prost(bytes, tag = "2")]
-    pub start_key: std::vec::Vec<u8>,
+    pub start_key: ::bytes::Bytes,
     #[prost(bytes, tag = "3")]
-    pub end_key: std::vec::Vec<u8>,
+    pub end_key: ::bytes::Bytes,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DeleteRangeResponse {
     #[prost(message, optional, tag = "1")]
     pub region_error: ::std::option::Option<Error>,
     #[prost(string, tag = "2")]
-    pub error: std::string::String,
+    pub error: ::prost::BytesString,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct NotLeader {
@@ -455,18 +455,18 @@ pub struct RegionNotFound {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct KeyNotInRegion {
     #[prost(bytes, tag = "1")]
-    pub key: std::vec::Vec<u8>,
+    pub key: ::bytes::Bytes,
     #[prost(uint64, tag = "2")]
     pub region_id: u64,
     #[prost(bytes, tag = "3")]
-    pub start_key: std::vec::Vec<u8>,
+    pub start_key: ::bytes::Bytes,
     #[prost(bytes, tag = "4")]
-    pub end_key: std::vec::Vec<u8>,
+    pub end_key: ::bytes::Bytes,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ServerIsBusy {
     #[prost(string, tag = "1")]
-    pub reason: std::string::String,
+    pub reason: ::prost::BytesString,
     #[prost(uint64, tag = "2")]
     pub backoff_ms: u64,
 }
@@ -482,7 +482,7 @@ pub struct RaftEntryTooLarge {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Error {
     #[prost(string, tag = "1")]
-    pub message: std::string::String,
+    pub message: ::prost::BytesString,
     #[prost(message, optional, tag = "2")]
     pub not_leader: ::std::option::Option<NotLeader>,
     #[prost(message, optional, tag = "3")]
@@ -548,10 +548,10 @@ pub struct KeyError {
     pub locked: ::std::option::Option<LockInfo>,
     /// Client may restart the txn. e.g write conflict.
     #[prost(string, tag = "2")]
-    pub retryable: std::string::String,
+    pub retryable: ::prost::BytesString,
     /// Client should abort the txn.
     #[prost(string, tag = "3")]
-    pub abort: std::string::String,
+    pub abort: ::prost::BytesString,
     /// Write conflict is moved from retryable to here.
     #[prost(message, optional, tag = "4")]
     pub conflict: ::std::option::Option<WriteConflict>,
@@ -562,18 +562,18 @@ pub struct KeyError {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct LockInfo {
     #[prost(bytes, tag = "1")]
-    pub primary_lock: std::vec::Vec<u8>,
+    pub primary_lock: ::bytes::Bytes,
     #[prost(uint64, tag = "2")]
     pub lock_version: u64,
     #[prost(bytes, tag = "3")]
-    pub key: std::vec::Vec<u8>,
+    pub key: ::bytes::Bytes,
     #[prost(uint64, tag = "4")]
     pub lock_ttl: u64,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct AlreadyExist {
     #[prost(bytes, tag = "1")]
-    pub key: std::vec::Vec<u8>,
+    pub key: ::bytes::Bytes,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct WriteConflict {
@@ -582,9 +582,9 @@ pub struct WriteConflict {
     #[prost(uint64, tag = "2")]
     pub conflict_ts: u64,
     #[prost(bytes, tag = "3")]
-    pub key: std::vec::Vec<u8>,
+    pub key: ::bytes::Bytes,
     #[prost(bytes, tag = "4")]
-    pub primary: std::vec::Vec<u8>,
+    pub primary: ::bytes::Bytes,
 }
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
@@ -682,7 +682,7 @@ pub trait Complex {
 }
 pub fn create_complex<S: Complex + Send + Clone + 'static>(s: S) -> ::grpcio::Service {
     let mut builder = ::grpcio::ServiceBuilder::new();
-    let mut instance = s.clone();
+    let mut instance = s;
     builder = builder.add_unary_handler(&METHOD_COMPLEX_UN, move |ctx, req, resp| {
         instance.un(ctx, req, resp)
     });

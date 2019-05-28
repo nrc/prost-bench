@@ -1,8 +1,11 @@
 use std::time::Instant;
+use std::str::FromStr;
+
+use bytes::Bytes;
 use prost_bench::proto::{
     get_prost,
 };
-use prost::Message;
+use prost::{BytesString, Message};
 
 const COUNT: usize = 1000;
 
@@ -68,8 +71,8 @@ fn init_raw_get_request(i: usize, j: usize) -> get_prost::RawGetRequest {
     key.push((j * 20) as u8);
     get_prost::RawGetRequest {
         context: Some(init_context(i)),
-        key,
-        cf: "Hello world!".to_owned(),
+        key: Bytes::from(key),
+        cf: BytesString::from_str("Hello world!").unwrap(),
     }
 }
 
@@ -94,7 +97,6 @@ fn init_context(i: usize) -> get_prost::Context {
         scan_detail: false,
     }
 }
-
 // #[cfg(unix)]
 // fn get_resident() -> Option<usize> {
 //     use std::fs;

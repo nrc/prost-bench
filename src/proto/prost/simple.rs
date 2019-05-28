@@ -1,7 +1,7 @@
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Data {
     #[prost(bytes, tag = "1")]
-    pub payload: std::vec::Vec<u8>,
+    pub payload: ::bytes::Bytes,
 }
 const METHOD_SIMPLE_FOO: ::grpcio::Method<Data, Data> = ::grpcio::Method {
     ty: ::grpcio::MethodType::Unary,
@@ -53,7 +53,7 @@ pub trait Simple {
 }
 pub fn create_simple<S: Simple + Send + Clone + 'static>(s: S) -> ::grpcio::Service {
     let mut builder = ::grpcio::ServiceBuilder::new();
-    let mut instance = s.clone();
+    let mut instance = s;
     builder = builder.add_unary_handler(&METHOD_SIMPLE_FOO, move |ctx, req, resp| {
         instance.foo(ctx, req, resp)
     });

@@ -9,7 +9,7 @@ impl Data {
         self.payload.clear();
     }
     #[inline]
-    pub fn set_payload(&mut self, v: std::vec::Vec<u8>) {
+    pub fn set_payload(&mut self, v: ::bytes::Bytes) {
         self.payload = v;
     }
     #[inline]
@@ -17,12 +17,12 @@ impl Data {
         &self.payload
     }
     #[inline]
-    pub fn mut_payload(&mut self) -> &mut std::vec::Vec<u8> {
+    pub fn mut_payload(&mut self) -> &mut ::bytes::Bytes {
         &mut self.payload
     }
     #[inline]
-    pub fn take_payload(&mut self) -> std::vec::Vec<u8> {
-        ::std::mem::replace(&mut self.payload, ::std::vec::Vec::new())
+    pub fn take_payload(&mut self) -> ::bytes::Bytes {
+        ::std::mem::replace(&mut self.payload, ::bytes::Bytes::new())
     }
 }
 impl ::protobuf::Clear for Data {
@@ -83,11 +83,7 @@ impl ::protobuf::Message for Data {
         Ok(buf)
     }
     fn merge_from_bytes(&mut self, bytes: &[u8]) -> ::protobuf::ProtobufResult<()> {
-        if let Err(_) = ::prost::Message::merge(
-            self,
-            bytes,
-            &mut ::prost::encoding::DecodeContext::default(),
-        ) {
+        if let Err(_) = ::prost::Message::merge(self, bytes) {
             return Err(::protobuf::ProtobufError::WireError(
                 ::protobuf::error::WireError::Other,
             ));

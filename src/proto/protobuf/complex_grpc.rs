@@ -63,7 +63,7 @@ pub trait Complex {
 
 pub fn create_complex<S: Complex + Send + Clone + 'static>(s: S) -> ::grpcio::Service {
     let mut builder = ::grpcio::ServiceBuilder::new();
-    let mut instance = s.clone();
+    let mut instance = s;
     builder = builder.add_unary_handler(&METHOD_COMPLEX_UN, move |ctx, req, resp| {
         instance.un(ctx, req, resp)
     });
