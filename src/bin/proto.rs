@@ -1,5 +1,6 @@
 use std::time::Instant;
 use std::str::FromStr;
+use std::thread;
 
 use bytes::Bytes;
 use prost_bench::proto::{
@@ -8,10 +9,18 @@ use prost_bench::proto::{
 use prost::{BytesString, Message};
 
 const COUNT: usize = 1000;
+const THREADS: usize = 16;
 
 fn main() {
+    let mut handles = Vec::new();
     //bench(init_batch_tiny, "tiny");
-    bench(init_batch_medium, "medium");
+    for _ in 0..THREADS {
+        handles.push(thread::spawn(move || {
+            bench(init_batch_medium, "medium");
+        }));
+    }
+
+    handles.into_iter().for_each(|h| h.join().unwrap());
 
     // if let Some(n) = get_resident() {
     //     let kb = n as f64 / 1_000.0;
@@ -31,13 +40,14 @@ fn bench(init: impl Fn(usize) -> get_prost::BatchCommandsRequest, name: &str) {
     }
     let time = start.elapsed();
 
-    println!(
-        "Roundtripped {} {} messages, time: {}ms. {}",
-        COUNT,
-        name,
-        time.as_millis(),
-        result.len(),
-    );    
+    // println!(
+    //     "Roundtripped {} {} messages, time: {}ms. {}",
+    //     COUNT,
+    //     name,
+    //     time.as_millis(),
+    //     result.len(),
+    // );
+    println!("{}", time.as_millis());
 }
 
 fn init_batch_tiny(i: usize) -> get_prost::BatchCommandsRequest {
@@ -72,7 +82,7 @@ fn init_raw_get_request(i: usize, j: usize) -> get_prost::RawGetRequest {
     get_prost::RawGetRequest {
         context: Some(init_context(i)),
         key: Bytes::from(key),
-        cf: BytesString::from_str("Hello world!").unwrap(),
+        cf: BytesString::from_str("Hello world!").unwrap(), //"Hello world!".to_owned(),
     }
 }
 
