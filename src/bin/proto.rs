@@ -1,3 +1,4 @@
+use std::env;
 use std::time::Instant;
 use std::str::FromStr;
 use std::thread;
@@ -6,21 +7,36 @@ use bytes::Bytes;
 use prost_bench::proto::{
     get_prost,
 };
-use prost::{BytesString, Message};
+use prost::{
+//    BytesString,
+    Message,
+};
 
-const COUNT: usize = 1000;
+#[global_allocator] 
+static ALLOC: jemallocator::Jemalloc = jemallocator::Jemalloc;
+
 const THREADS: usize = 16;
 
 fn main() {
-    let mut handles = Vec::new();
-    //bench(init_batch_tiny, "tiny");
-    for _ in 0..THREADS {
-        handles.push(thread::spawn(move || {
-            bench(init_batch_medium, "medium");
-        }));
+    let mut args = env::args();
+    let _ = args.next();
+    if let Some(arg) = args.next() {
+        if arg == "threads" {
+            bench_with_threads(init_batch_medium, "medium", 1000);
+            return;
+        }
+        if arg == "big" {
+            bench(init_batch_medium, "medium", 10_000);
+            return;
+        }
+        if arg == "tiny" {
+            bench(init_batch_tiny, "tiny", 1000);
+            return;
+        }
     }
 
-    handles.into_iter().for_each(|h| h.join().unwrap());
+    bench(init_batch_medium, "medium", 1000);
+    
 
     // if let Some(n) = get_resident() {
     //     let kb = n as f64 / 1_000.0;
@@ -28,11 +44,22 @@ fn main() {
     // }
 }
 
-fn bench(init: impl Fn(usize) -> get_prost::BatchCommandsRequest, name: &str) {
-    let mut result = Vec::with_capacity(COUNT);
+fn bench_with_threads(init: impl Fn(usize) -> get_prost::BatchCommandsRequest + Send + 'static + Clone, name: &'static str, count: usize) {
+    let mut handles = Vec::new();
+    for _ in 0..THREADS {
+        let init = init.clone();
+        handles.push(thread::spawn(move || {
+            bench(init, name, count);
+        }));
+    }
+    handles.into_iter().for_each(|h| h.join().unwrap());
+}
+
+fn bench(init: impl Fn(usize) -> get_prost::BatchCommandsRequest, name: &str, count: usize) {
+    let mut result = Vec::with_capacity(count);
     let mut buf = Vec::with_capacity(8_000_000);
     let start = Instant::now();
-    for i in 0..COUNT {
+    for i in 0..count {
         let req = init(i);
         req.encode(&mut buf).unwrap();
         let msg = get_prost::BatchCommandsRequest::decode(&buf).unwrap();
@@ -42,7 +69,7 @@ fn bench(init: impl Fn(usize) -> get_prost::BatchCommandsRequest, name: &str) {
 
     // println!(
     //     "Roundtripped {} {} messages, time: {}ms. {}",
-    //     COUNT,
+    //     count,
     //     name,
     //     time.as_millis(),
     //     result.len(),
@@ -81,8 +108,10 @@ fn init_raw_get_request(i: usize, j: usize) -> get_prost::RawGetRequest {
     key.push((j * 20) as u8);
     get_prost::RawGetRequest {
         context: Some(init_context(i)),
-        key: Bytes::from(key),
-        cf: BytesString::from_str("Hello world!").unwrap(), //"Hello world!".to_owned(),
+//        key: Bytes::from(key),
+        key,
+//        cf: BytesString::from_str("Hello world!").unwrap(),
+        cf: "Hello world!".to_owned(),
     }
 }
 

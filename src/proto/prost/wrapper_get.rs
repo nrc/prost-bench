@@ -403,7 +403,7 @@ impl RawGetRequest {
         self.key.clear();
     }
     #[inline]
-    pub fn set_key(&mut self, v: ::bytes::Bytes) {
+    pub fn set_key(&mut self, v: std::vec::Vec<u8>) {
         self.key = v;
     }
     #[inline]
@@ -411,19 +411,19 @@ impl RawGetRequest {
         &self.key
     }
     #[inline]
-    pub fn mut_key(&mut self) -> &mut ::bytes::Bytes {
+    pub fn mut_key(&mut self) -> &mut std::vec::Vec<u8> {
         &mut self.key
     }
     #[inline]
-    pub fn take_key(&mut self) -> ::bytes::Bytes {
-        ::std::mem::replace(&mut self.key, ::bytes::Bytes::new())
+    pub fn take_key(&mut self) -> std::vec::Vec<u8> {
+        ::std::mem::replace(&mut self.key, ::std::vec::Vec::new())
     }
     #[inline]
     pub fn clear_cf(&mut self) {
         self.cf.clear();
     }
     #[inline]
-    pub fn set_cf(&mut self, v: ::prost::BytesString) {
+    pub fn set_cf(&mut self, v: std::string::String) {
         self.cf = v;
     }
     #[inline]
@@ -431,12 +431,12 @@ impl RawGetRequest {
         &self.cf
     }
     #[inline]
-    pub fn mut_cf(&mut self) -> &mut ::prost::BytesString {
+    pub fn mut_cf(&mut self) -> &mut std::string::String {
         &mut self.cf
     }
     #[inline]
-    pub fn take_cf(&mut self) -> ::prost::BytesString {
-        ::std::mem::replace(&mut self.cf, ::prost::BytesString::new())
+    pub fn take_cf(&mut self) -> std::string::String {
+        ::std::mem::replace(&mut self.cf, ::std::string::String::new())
     }
 }
 impl ::protobuf::Clear for RawGetRequest {
@@ -544,7 +544,7 @@ impl RawGetResponse {
         self.error.clear();
     }
     #[inline]
-    pub fn set_error(&mut self, v: ::prost::BytesString) {
+    pub fn set_error(&mut self, v: std::string::String) {
         self.error = v;
     }
     #[inline]
@@ -552,19 +552,19 @@ impl RawGetResponse {
         &self.error
     }
     #[inline]
-    pub fn mut_error(&mut self) -> &mut ::prost::BytesString {
+    pub fn mut_error(&mut self) -> &mut std::string::String {
         &mut self.error
     }
     #[inline]
-    pub fn take_error(&mut self) -> ::prost::BytesString {
-        ::std::mem::replace(&mut self.error, ::prost::BytesString::new())
+    pub fn take_error(&mut self) -> std::string::String {
+        ::std::mem::replace(&mut self.error, ::std::string::String::new())
     }
     #[inline]
     pub fn clear_value(&mut self) {
         self.value.clear();
     }
     #[inline]
-    pub fn set_value(&mut self, v: ::bytes::Bytes) {
+    pub fn set_value(&mut self, v: std::vec::Vec<u8>) {
         self.value = v;
     }
     #[inline]
@@ -572,12 +572,12 @@ impl RawGetResponse {
         &self.value
     }
     #[inline]
-    pub fn mut_value(&mut self) -> &mut ::bytes::Bytes {
+    pub fn mut_value(&mut self) -> &mut std::vec::Vec<u8> {
         &mut self.value
     }
     #[inline]
-    pub fn take_value(&mut self) -> ::bytes::Bytes {
-        ::std::mem::replace(&mut self.value, ::bytes::Bytes::new())
+    pub fn take_value(&mut self) -> std::vec::Vec<u8> {
+        ::std::mem::replace(&mut self.value, ::std::vec::Vec::new())
     }
 }
 impl ::protobuf::Clear for RawGetResponse {
@@ -1086,7 +1086,7 @@ impl Error {
         self.message.clear();
     }
     #[inline]
-    pub fn set_message(&mut self, v: ::prost::BytesString) {
+    pub fn set_message(&mut self, v: std::string::String) {
         self.message = v;
     }
     #[inline]
@@ -1094,12 +1094,12 @@ impl Error {
         &self.message
     }
     #[inline]
-    pub fn mut_message(&mut self) -> &mut ::prost::BytesString {
+    pub fn mut_message(&mut self) -> &mut std::string::String {
         &mut self.message
     }
     #[inline]
-    pub fn take_message(&mut self) -> ::prost::BytesString {
-        ::std::mem::replace(&mut self.message, ::prost::BytesString::new())
+    pub fn take_message(&mut self) -> std::string::String {
+        ::std::mem::replace(&mut self.message, ::std::string::String::new())
     }
     #[inline]
     pub fn has_not_leader(&self) -> bool {

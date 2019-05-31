@@ -9,7 +9,7 @@ impl Data {
         self.payload.clear();
     }
     #[inline]
-    pub fn set_payload(&mut self, v: ::bytes::Bytes) {
+    pub fn set_payload(&mut self, v: std::vec::Vec<u8>) {
         self.payload = v;
     }
     #[inline]
@@ -17,12 +17,12 @@ impl Data {
         &self.payload
     }
     #[inline]
-    pub fn mut_payload(&mut self) -> &mut ::bytes::Bytes {
+    pub fn mut_payload(&mut self) -> &mut std::vec::Vec<u8> {
         &mut self.payload
     }
     #[inline]
-    pub fn take_payload(&mut self) -> ::bytes::Bytes {
-        ::std::mem::replace(&mut self.payload, ::bytes::Bytes::new())
+    pub fn take_payload(&mut self) -> std::vec::Vec<u8> {
+        ::std::mem::replace(&mut self.payload, ::std::vec::Vec::new())
     }
 }
 impl ::protobuf::Clear for Data {

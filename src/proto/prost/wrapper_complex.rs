@@ -415,7 +415,7 @@ impl GetRequest {
         self.key.clear();
     }
     #[inline]
-    pub fn set_key(&mut self, v: ::bytes::Bytes) {
+    pub fn set_key(&mut self, v: std::vec::Vec<u8>) {
         self.key = v;
     }
     #[inline]
@@ -423,12 +423,12 @@ impl GetRequest {
         &self.key
     }
     #[inline]
-    pub fn mut_key(&mut self) -> &mut ::bytes::Bytes {
+    pub fn mut_key(&mut self) -> &mut std::vec::Vec<u8> {
         &mut self.key
     }
     #[inline]
-    pub fn take_key(&mut self) -> ::bytes::Bytes {
-        ::std::mem::replace(&mut self.key, ::bytes::Bytes::new())
+    pub fn take_key(&mut self) -> std::vec::Vec<u8> {
+        ::std::mem::replace(&mut self.key, ::std::vec::Vec::new())
     }
     #[inline]
     pub fn clear_version(&mut self) {
@@ -578,7 +578,7 @@ impl GetResponse {
         self.value.clear();
     }
     #[inline]
-    pub fn set_value(&mut self, v: ::bytes::Bytes) {
+    pub fn set_value(&mut self, v: std::vec::Vec<u8>) {
         self.value = v;
     }
     #[inline]
@@ -586,12 +586,12 @@ impl GetResponse {
         &self.value
     }
     #[inline]
-    pub fn mut_value(&mut self) -> &mut ::bytes::Bytes {
+    pub fn mut_value(&mut self) -> &mut std::vec::Vec<u8> {
         &mut self.value
     }
     #[inline]
-    pub fn take_value(&mut self) -> ::bytes::Bytes {
-        ::std::mem::replace(&mut self.value, ::bytes::Bytes::new())
+    pub fn take_value(&mut self) -> std::vec::Vec<u8> {
+        ::std::mem::replace(&mut self.value, ::std::vec::Vec::new())
     }
 }
 impl ::protobuf::Clear for GetResponse {
@@ -699,7 +699,7 @@ impl ScanRequest {
         self.start_key.clear();
     }
     #[inline]
-    pub fn set_start_key(&mut self, v: ::bytes::Bytes) {
+    pub fn set_start_key(&mut self, v: std::vec::Vec<u8>) {
         self.start_key = v;
     }
     #[inline]
@@ -707,12 +707,12 @@ impl ScanRequest {
         &self.start_key
     }
     #[inline]
-    pub fn mut_start_key(&mut self) -> &mut ::bytes::Bytes {
+    pub fn mut_start_key(&mut self) -> &mut std::vec::Vec<u8> {
         &mut self.start_key
     }
     #[inline]
-    pub fn take_start_key(&mut self) -> ::bytes::Bytes {
-        ::std::mem::replace(&mut self.start_key, ::bytes::Bytes::new())
+    pub fn take_start_key(&mut self) -> std::vec::Vec<u8> {
+        ::std::mem::replace(&mut self.start_key, ::std::vec::Vec::new())
     }
     #[inline]
     pub fn clear_limit(&mut self) {
@@ -767,7 +767,7 @@ impl ScanRequest {
         self.end_key.clear();
     }
     #[inline]
-    pub fn set_end_key(&mut self, v: ::bytes::Bytes) {
+    pub fn set_end_key(&mut self, v: std::vec::Vec<u8>) {
         self.end_key = v;
     }
     #[inline]
@@ -775,12 +775,12 @@ impl ScanRequest {
         &self.end_key
     }
     #[inline]
-    pub fn mut_end_key(&mut self) -> &mut ::bytes::Bytes {
+    pub fn mut_end_key(&mut self) -> &mut std::vec::Vec<u8> {
         &mut self.end_key
     }
     #[inline]
-    pub fn take_end_key(&mut self) -> ::bytes::Bytes {
-        ::std::mem::replace(&mut self.end_key, ::bytes::Bytes::new())
+    pub fn take_end_key(&mut self) -> std::vec::Vec<u8> {
+        ::std::mem::replace(&mut self.end_key, ::std::vec::Vec::new())
     }
 }
 impl ::protobuf::Clear for ScanRequest {
@@ -888,7 +888,7 @@ impl KvPair {
         self.key.clear();
     }
     #[inline]
-    pub fn set_key(&mut self, v: ::bytes::Bytes) {
+    pub fn set_key(&mut self, v: std::vec::Vec<u8>) {
         self.key = v;
     }
     #[inline]
@@ -896,19 +896,19 @@ impl KvPair {
         &self.key
     }
     #[inline]
-    pub fn mut_key(&mut self) -> &mut ::bytes::Bytes {
+    pub fn mut_key(&mut self) -> &mut std::vec::Vec<u8> {
         &mut self.key
     }
     #[inline]
-    pub fn take_key(&mut self) -> ::bytes::Bytes {
-        ::std::mem::replace(&mut self.key, ::bytes::Bytes::new())
+    pub fn take_key(&mut self) -> std::vec::Vec<u8> {
+        ::std::mem::replace(&mut self.key, ::std::vec::Vec::new())
     }
     #[inline]
     pub fn clear_value(&mut self) {
         self.value.clear();
     }
     #[inline]
-    pub fn set_value(&mut self, v: ::bytes::Bytes) {
+    pub fn set_value(&mut self, v: std::vec::Vec<u8>) {
         self.value = v;
     }
     #[inline]
@@ -916,12 +916,12 @@ impl KvPair {
         &self.value
     }
     #[inline]
-    pub fn mut_value(&mut self) -> &mut ::bytes::Bytes {
+    pub fn mut_value(&mut self) -> &mut std::vec::Vec<u8> {
         &mut self.value
     }
     #[inline]
-    pub fn take_value(&mut self) -> ::bytes::Bytes {
-        ::std::mem::replace(&mut self.value, ::bytes::Bytes::new())
+    pub fn take_value(&mut self) -> std::vec::Vec<u8> {
+        ::std::mem::replace(&mut self.value, ::std::vec::Vec::new())
     }
 }
 impl ::protobuf::Clear for KvPair {
@@ -1132,7 +1132,7 @@ impl Mutation {
         self.key.clear();
     }
     #[inline]
-    pub fn set_key(&mut self, v: ::bytes::Bytes) {
+    pub fn set_key(&mut self, v: std::vec::Vec<u8>) {
         self.key = v;
     }
     #[inline]
@@ -1140,19 +1140,19 @@ impl Mutation {
         &self.key
     }
     #[inline]
-    pub fn mut_key(&mut self) -> &mut ::bytes::Bytes {
+    pub fn mut_key(&mut self) -> &mut std::vec::Vec<u8> {
         &mut self.key
     }
     #[inline]
-    pub fn take_key(&mut self) -> ::bytes::Bytes {
-        ::std::mem::replace(&mut self.key, ::bytes::Bytes::new())
+    pub fn take_key(&mut self) -> std::vec::Vec<u8> {
+        ::std::mem::replace(&mut self.key, ::std::vec::Vec::new())
     }
     #[inline]
     pub fn clear_value(&mut self) {
         self.value.clear();
     }
     #[inline]
-    pub fn set_value(&mut self, v: ::bytes::Bytes) {
+    pub fn set_value(&mut self, v: std::vec::Vec<u8>) {
         self.value = v;
     }
     #[inline]
@@ -1160,12 +1160,12 @@ impl Mutation {
         &self.value
     }
     #[inline]
-    pub fn mut_value(&mut self) -> &mut ::bytes::Bytes {
+    pub fn mut_value(&mut self) -> &mut std::vec::Vec<u8> {
         &mut self.value
     }
     #[inline]
-    pub fn take_value(&mut self) -> ::bytes::Bytes {
-        ::std::mem::replace(&mut self.value, ::bytes::Bytes::new())
+    pub fn take_value(&mut self) -> std::vec::Vec<u8> {
+        ::std::mem::replace(&mut self.value, ::std::vec::Vec::new())
     }
     #[inline]
     pub fn clear_assertion(&mut self) {
@@ -1305,7 +1305,7 @@ impl PrewriteRequest {
         self.primary_lock.clear();
     }
     #[inline]
-    pub fn set_primary_lock(&mut self, v: ::bytes::Bytes) {
+    pub fn set_primary_lock(&mut self, v: std::vec::Vec<u8>) {
         self.primary_lock = v;
     }
     #[inline]
@@ -1313,12 +1313,12 @@ impl PrewriteRequest {
         &self.primary_lock
     }
     #[inline]
-    pub fn mut_primary_lock(&mut self) -> &mut ::bytes::Bytes {
+    pub fn mut_primary_lock(&mut self) -> &mut std::vec::Vec<u8> {
         &mut self.primary_lock
     }
     #[inline]
-    pub fn take_primary_lock(&mut self) -> ::bytes::Bytes {
-        ::std::mem::replace(&mut self.primary_lock, ::bytes::Bytes::new())
+    pub fn take_primary_lock(&mut self) -> std::vec::Vec<u8> {
+        ::std::mem::replace(&mut self.primary_lock, ::std::vec::Vec::new())
     }
     #[inline]
     pub fn clear_start_version(&mut self) {
@@ -1595,19 +1595,19 @@ impl CommitRequest {
         self.keys.clear();
     }
     #[inline]
-    pub fn set_keys(&mut self, v: ::std::vec::Vec<::bytes::Bytes>) {
+    pub fn set_keys(&mut self, v: ::std::vec::Vec<std::vec::Vec<u8>>) {
         self.keys = v;
     }
     #[inline]
-    pub fn get_keys(&self) -> &::std::vec::Vec<::bytes::Bytes> {
+    pub fn get_keys(&self) -> &::std::vec::Vec<std::vec::Vec<u8>> {
         &self.keys
     }
     #[inline]
-    pub fn mut_keys(&mut self) -> &mut ::std::vec::Vec<::bytes::Bytes> {
+    pub fn mut_keys(&mut self) -> &mut ::std::vec::Vec<std::vec::Vec<u8>> {
         &mut self.keys
     }
     #[inline]
-    pub fn take_keys(&mut self) -> ::std::vec::Vec<::bytes::Bytes> {
+    pub fn take_keys(&mut self) -> ::std::vec::Vec<std::vec::Vec<u8>> {
         ::std::mem::replace(&mut self.keys, ::std::vec::Vec::new())
     }
     #[inline]
@@ -1962,7 +1962,7 @@ impl ImportResponse {
         self.error.clear();
     }
     #[inline]
-    pub fn set_error(&mut self, v: ::prost::BytesString) {
+    pub fn set_error(&mut self, v: std::string::String) {
         self.error = v;
     }
     #[inline]
@@ -1970,12 +1970,12 @@ impl ImportResponse {
         &self.error
     }
     #[inline]
-    pub fn mut_error(&mut self) -> &mut ::prost::BytesString {
+    pub fn mut_error(&mut self) -> &mut std::string::String {
         &mut self.error
     }
     #[inline]
-    pub fn take_error(&mut self) -> ::prost::BytesString {
-        ::std::mem::replace(&mut self.error, ::prost::BytesString::new())
+    pub fn take_error(&mut self) -> std::string::String {
+        ::std::mem::replace(&mut self.error, ::std::string::String::new())
     }
 }
 impl ::protobuf::Clear for ImportResponse {
@@ -2095,19 +2095,19 @@ impl BatchRollbackRequest {
         self.keys.clear();
     }
     #[inline]
-    pub fn set_keys(&mut self, v: ::std::vec::Vec<::bytes::Bytes>) {
+    pub fn set_keys(&mut self, v: ::std::vec::Vec<std::vec::Vec<u8>>) {
         self.keys = v;
     }
     #[inline]
-    pub fn get_keys(&self) -> &::std::vec::Vec<::bytes::Bytes> {
+    pub fn get_keys(&self) -> &::std::vec::Vec<std::vec::Vec<u8>> {
         &self.keys
     }
     #[inline]
-    pub fn mut_keys(&mut self) -> &mut ::std::vec::Vec<::bytes::Bytes> {
+    pub fn mut_keys(&mut self) -> &mut ::std::vec::Vec<std::vec::Vec<u8>> {
         &mut self.keys
     }
     #[inline]
-    pub fn take_keys(&mut self) -> ::std::vec::Vec<::bytes::Bytes> {
+    pub fn take_keys(&mut self) -> ::std::vec::Vec<std::vec::Vec<u8>> {
         ::std::mem::replace(&mut self.keys, ::std::vec::Vec::new())
     }
 }
@@ -2347,7 +2347,7 @@ impl CleanupRequest {
         self.key.clear();
     }
     #[inline]
-    pub fn set_key(&mut self, v: ::bytes::Bytes) {
+    pub fn set_key(&mut self, v: std::vec::Vec<u8>) {
         self.key = v;
     }
     #[inline]
@@ -2355,12 +2355,12 @@ impl CleanupRequest {
         &self.key
     }
     #[inline]
-    pub fn mut_key(&mut self) -> &mut ::bytes::Bytes {
+    pub fn mut_key(&mut self) -> &mut std::vec::Vec<u8> {
         &mut self.key
     }
     #[inline]
-    pub fn take_key(&mut self) -> ::bytes::Bytes {
-        ::std::mem::replace(&mut self.key, ::bytes::Bytes::new())
+    pub fn take_key(&mut self) -> std::vec::Vec<u8> {
+        ::std::mem::replace(&mut self.key, ::std::vec::Vec::new())
     }
     #[inline]
     pub fn clear_start_version(&mut self) {
@@ -2623,19 +2623,19 @@ impl BatchGetRequest {
         self.keys.clear();
     }
     #[inline]
-    pub fn set_keys(&mut self, v: ::std::vec::Vec<::bytes::Bytes>) {
+    pub fn set_keys(&mut self, v: ::std::vec::Vec<std::vec::Vec<u8>>) {
         self.keys = v;
     }
     #[inline]
-    pub fn get_keys(&self) -> &::std::vec::Vec<::bytes::Bytes> {
+    pub fn get_keys(&self) -> &::std::vec::Vec<std::vec::Vec<u8>> {
         &self.keys
     }
     #[inline]
-    pub fn mut_keys(&mut self) -> &mut ::std::vec::Vec<::bytes::Bytes> {
+    pub fn mut_keys(&mut self) -> &mut ::std::vec::Vec<std::vec::Vec<u8>> {
         &mut self.keys
     }
     #[inline]
-    pub fn take_keys(&mut self) -> ::std::vec::Vec<::bytes::Bytes> {
+    pub fn take_keys(&mut self) -> ::std::vec::Vec<std::vec::Vec<u8>> {
         ::std::mem::replace(&mut self.keys, ::std::vec::Vec::new())
     }
     #[inline]
@@ -2889,7 +2889,7 @@ impl ScanLockRequest {
         self.start_key.clear();
     }
     #[inline]
-    pub fn set_start_key(&mut self, v: ::bytes::Bytes) {
+    pub fn set_start_key(&mut self, v: std::vec::Vec<u8>) {
         self.start_key = v;
     }
     #[inline]
@@ -2897,12 +2897,12 @@ impl ScanLockRequest {
         &self.start_key
     }
     #[inline]
-    pub fn mut_start_key(&mut self) -> &mut ::bytes::Bytes {
+    pub fn mut_start_key(&mut self) -> &mut std::vec::Vec<u8> {
         &mut self.start_key
     }
     #[inline]
-    pub fn take_start_key(&mut self) -> ::bytes::Bytes {
-        ::std::mem::replace(&mut self.start_key, ::bytes::Bytes::new())
+    pub fn take_start_key(&mut self) -> std::vec::Vec<u8> {
+        ::std::mem::replace(&mut self.start_key, ::std::vec::Vec::new())
     }
     #[inline]
     pub fn clear_limit(&mut self) {
@@ -3788,7 +3788,7 @@ impl RawGetRequest {
         self.key.clear();
     }
     #[inline]
-    pub fn set_key(&mut self, v: ::bytes::Bytes) {
+    pub fn set_key(&mut self, v: std::vec::Vec<u8>) {
         self.key = v;
     }
     #[inline]
@@ -3796,19 +3796,19 @@ impl RawGetRequest {
         &self.key
     }
     #[inline]
-    pub fn mut_key(&mut self) -> &mut ::bytes::Bytes {
+    pub fn mut_key(&mut self) -> &mut std::vec::Vec<u8> {
         &mut self.key
     }
     #[inline]
-    pub fn take_key(&mut self) -> ::bytes::Bytes {
-        ::std::mem::replace(&mut self.key, ::bytes::Bytes::new())
+    pub fn take_key(&mut self) -> std::vec::Vec<u8> {
+        ::std::mem::replace(&mut self.key, ::std::vec::Vec::new())
     }
     #[inline]
     pub fn clear_cf(&mut self) {
         self.cf.clear();
     }
     #[inline]
-    pub fn set_cf(&mut self, v: ::prost::BytesString) {
+    pub fn set_cf(&mut self, v: std::string::String) {
         self.cf = v;
     }
     #[inline]
@@ -3816,12 +3816,12 @@ impl RawGetRequest {
         &self.cf
     }
     #[inline]
-    pub fn mut_cf(&mut self) -> &mut ::prost::BytesString {
+    pub fn mut_cf(&mut self) -> &mut std::string::String {
         &mut self.cf
     }
     #[inline]
-    pub fn take_cf(&mut self) -> ::prost::BytesString {
-        ::std::mem::replace(&mut self.cf, ::prost::BytesString::new())
+    pub fn take_cf(&mut self) -> std::string::String {
+        ::std::mem::replace(&mut self.cf, ::std::string::String::new())
     }
 }
 impl ::protobuf::Clear for RawGetRequest {
@@ -3929,7 +3929,7 @@ impl RawGetResponse {
         self.error.clear();
     }
     #[inline]
-    pub fn set_error(&mut self, v: ::prost::BytesString) {
+    pub fn set_error(&mut self, v: std::string::String) {
         self.error = v;
     }
     #[inline]
@@ -3937,19 +3937,19 @@ impl RawGetResponse {
         &self.error
     }
     #[inline]
-    pub fn mut_error(&mut self) -> &mut ::prost::BytesString {
+    pub fn mut_error(&mut self) -> &mut std::string::String {
         &mut self.error
     }
     #[inline]
-    pub fn take_error(&mut self) -> ::prost::BytesString {
-        ::std::mem::replace(&mut self.error, ::prost::BytesString::new())
+    pub fn take_error(&mut self) -> std::string::String {
+        ::std::mem::replace(&mut self.error, ::std::string::String::new())
     }
     #[inline]
     pub fn clear_value(&mut self) {
         self.value.clear();
     }
     #[inline]
-    pub fn set_value(&mut self, v: ::bytes::Bytes) {
+    pub fn set_value(&mut self, v: std::vec::Vec<u8>) {
         self.value = v;
     }
     #[inline]
@@ -3957,12 +3957,12 @@ impl RawGetResponse {
         &self.value
     }
     #[inline]
-    pub fn mut_value(&mut self) -> &mut ::bytes::Bytes {
+    pub fn mut_value(&mut self) -> &mut std::vec::Vec<u8> {
         &mut self.value
     }
     #[inline]
-    pub fn take_value(&mut self) -> ::bytes::Bytes {
-        ::std::mem::replace(&mut self.value, ::bytes::Bytes::new())
+    pub fn take_value(&mut self) -> std::vec::Vec<u8> {
+        ::std::mem::replace(&mut self.value, ::std::vec::Vec::new())
     }
 }
 impl ::protobuf::Clear for RawGetResponse {
@@ -4070,7 +4070,7 @@ impl RawPutRequest {
         self.key.clear();
     }
     #[inline]
-    pub fn set_key(&mut self, v: ::bytes::Bytes) {
+    pub fn set_key(&mut self, v: std::vec::Vec<u8>) {
         self.key = v;
     }
     #[inline]
@@ -4078,19 +4078,19 @@ impl RawPutRequest {
         &self.key
     }
     #[inline]
-    pub fn mut_key(&mut self) -> &mut ::bytes::Bytes {
+    pub fn mut_key(&mut self) -> &mut std::vec::Vec<u8> {
         &mut self.key
     }
     #[inline]
-    pub fn take_key(&mut self) -> ::bytes::Bytes {
-        ::std::mem::replace(&mut self.key, ::bytes::Bytes::new())
+    pub fn take_key(&mut self) -> std::vec::Vec<u8> {
+        ::std::mem::replace(&mut self.key, ::std::vec::Vec::new())
     }
     #[inline]
     pub fn clear_value(&mut self) {
         self.value.clear();
     }
     #[inline]
-    pub fn set_value(&mut self, v: ::bytes::Bytes) {
+    pub fn set_value(&mut self, v: std::vec::Vec<u8>) {
         self.value = v;
     }
     #[inline]
@@ -4098,19 +4098,19 @@ impl RawPutRequest {
         &self.value
     }
     #[inline]
-    pub fn mut_value(&mut self) -> &mut ::bytes::Bytes {
+    pub fn mut_value(&mut self) -> &mut std::vec::Vec<u8> {
         &mut self.value
     }
     #[inline]
-    pub fn take_value(&mut self) -> ::bytes::Bytes {
-        ::std::mem::replace(&mut self.value, ::bytes::Bytes::new())
+    pub fn take_value(&mut self) -> std::vec::Vec<u8> {
+        ::std::mem::replace(&mut self.value, ::std::vec::Vec::new())
     }
     #[inline]
     pub fn clear_cf(&mut self) {
         self.cf.clear();
     }
     #[inline]
-    pub fn set_cf(&mut self, v: ::prost::BytesString) {
+    pub fn set_cf(&mut self, v: std::string::String) {
         self.cf = v;
     }
     #[inline]
@@ -4118,12 +4118,12 @@ impl RawPutRequest {
         &self.cf
     }
     #[inline]
-    pub fn mut_cf(&mut self) -> &mut ::prost::BytesString {
+    pub fn mut_cf(&mut self) -> &mut std::string::String {
         &mut self.cf
     }
     #[inline]
-    pub fn take_cf(&mut self) -> ::prost::BytesString {
-        ::std::mem::replace(&mut self.cf, ::prost::BytesString::new())
+    pub fn take_cf(&mut self) -> std::string::String {
+        ::std::mem::replace(&mut self.cf, ::std::string::String::new())
     }
 }
 impl ::protobuf::Clear for RawPutRequest {
@@ -4231,7 +4231,7 @@ impl RawPutResponse {
         self.error.clear();
     }
     #[inline]
-    pub fn set_error(&mut self, v: ::prost::BytesString) {
+    pub fn set_error(&mut self, v: std::string::String) {
         self.error = v;
     }
     #[inline]
@@ -4239,12 +4239,12 @@ impl RawPutResponse {
         &self.error
     }
     #[inline]
-    pub fn mut_error(&mut self) -> &mut ::prost::BytesString {
+    pub fn mut_error(&mut self) -> &mut std::string::String {
         &mut self.error
     }
     #[inline]
-    pub fn take_error(&mut self) -> ::prost::BytesString {
-        ::std::mem::replace(&mut self.error, ::prost::BytesString::new())
+    pub fn take_error(&mut self) -> std::string::String {
+        ::std::mem::replace(&mut self.error, ::std::string::String::new())
     }
 }
 impl ::protobuf::Clear for RawPutResponse {
@@ -4372,7 +4372,7 @@ impl RawBatchPutRequest {
         self.cf.clear();
     }
     #[inline]
-    pub fn set_cf(&mut self, v: ::prost::BytesString) {
+    pub fn set_cf(&mut self, v: std::string::String) {
         self.cf = v;
     }
     #[inline]
@@ -4380,12 +4380,12 @@ impl RawBatchPutRequest {
         &self.cf
     }
     #[inline]
-    pub fn mut_cf(&mut self) -> &mut ::prost::BytesString {
+    pub fn mut_cf(&mut self) -> &mut std::string::String {
         &mut self.cf
     }
     #[inline]
-    pub fn take_cf(&mut self) -> ::prost::BytesString {
-        ::std::mem::replace(&mut self.cf, ::prost::BytesString::new())
+    pub fn take_cf(&mut self) -> std::string::String {
+        ::std::mem::replace(&mut self.cf, ::std::string::String::new())
     }
 }
 impl ::protobuf::Clear for RawBatchPutRequest {
@@ -4493,7 +4493,7 @@ impl RawBatchPutResponse {
         self.error.clear();
     }
     #[inline]
-    pub fn set_error(&mut self, v: ::prost::BytesString) {
+    pub fn set_error(&mut self, v: std::string::String) {
         self.error = v;
     }
     #[inline]
@@ -4501,12 +4501,12 @@ impl RawBatchPutResponse {
         &self.error
     }
     #[inline]
-    pub fn mut_error(&mut self) -> &mut ::prost::BytesString {
+    pub fn mut_error(&mut self) -> &mut std::string::String {
         &mut self.error
     }
     #[inline]
-    pub fn take_error(&mut self) -> ::prost::BytesString {
-        ::std::mem::replace(&mut self.error, ::prost::BytesString::new())
+    pub fn take_error(&mut self) -> std::string::String {
+        ::std::mem::replace(&mut self.error, ::std::string::String::new())
     }
 }
 impl ::protobuf::Clear for RawBatchPutResponse {
@@ -4614,19 +4614,19 @@ impl RawBatchGetRequest {
         self.keys.clear();
     }
     #[inline]
-    pub fn set_keys(&mut self, v: ::std::vec::Vec<::bytes::Bytes>) {
+    pub fn set_keys(&mut self, v: ::std::vec::Vec<std::vec::Vec<u8>>) {
         self.keys = v;
     }
     #[inline]
-    pub fn get_keys(&self) -> &::std::vec::Vec<::bytes::Bytes> {
+    pub fn get_keys(&self) -> &::std::vec::Vec<std::vec::Vec<u8>> {
         &self.keys
     }
     #[inline]
-    pub fn mut_keys(&mut self) -> &mut ::std::vec::Vec<::bytes::Bytes> {
+    pub fn mut_keys(&mut self) -> &mut ::std::vec::Vec<std::vec::Vec<u8>> {
         &mut self.keys
     }
     #[inline]
-    pub fn take_keys(&mut self) -> ::std::vec::Vec<::bytes::Bytes> {
+    pub fn take_keys(&mut self) -> ::std::vec::Vec<std::vec::Vec<u8>> {
         ::std::mem::replace(&mut self.keys, ::std::vec::Vec::new())
     }
     #[inline]
@@ -4634,7 +4634,7 @@ impl RawBatchGetRequest {
         self.cf.clear();
     }
     #[inline]
-    pub fn set_cf(&mut self, v: ::prost::BytesString) {
+    pub fn set_cf(&mut self, v: std::string::String) {
         self.cf = v;
     }
     #[inline]
@@ -4642,12 +4642,12 @@ impl RawBatchGetRequest {
         &self.cf
     }
     #[inline]
-    pub fn mut_cf(&mut self) -> &mut ::prost::BytesString {
+    pub fn mut_cf(&mut self) -> &mut std::string::String {
         &mut self.cf
     }
     #[inline]
-    pub fn take_cf(&mut self) -> ::prost::BytesString {
-        ::std::mem::replace(&mut self.cf, ::prost::BytesString::new())
+    pub fn take_cf(&mut self) -> std::string::String {
+        ::std::mem::replace(&mut self.cf, ::std::string::String::new())
     }
 }
 impl ::protobuf::Clear for RawBatchGetRequest {
@@ -4876,7 +4876,7 @@ impl RawDeleteRequest {
         self.key.clear();
     }
     #[inline]
-    pub fn set_key(&mut self, v: ::bytes::Bytes) {
+    pub fn set_key(&mut self, v: std::vec::Vec<u8>) {
         self.key = v;
     }
     #[inline]
@@ -4884,19 +4884,19 @@ impl RawDeleteRequest {
         &self.key
     }
     #[inline]
-    pub fn mut_key(&mut self) -> &mut ::bytes::Bytes {
+    pub fn mut_key(&mut self) -> &mut std::vec::Vec<u8> {
         &mut self.key
     }
     #[inline]
-    pub fn take_key(&mut self) -> ::bytes::Bytes {
-        ::std::mem::replace(&mut self.key, ::bytes::Bytes::new())
+    pub fn take_key(&mut self) -> std::vec::Vec<u8> {
+        ::std::mem::replace(&mut self.key, ::std::vec::Vec::new())
     }
     #[inline]
     pub fn clear_cf(&mut self) {
         self.cf.clear();
     }
     #[inline]
-    pub fn set_cf(&mut self, v: ::prost::BytesString) {
+    pub fn set_cf(&mut self, v: std::string::String) {
         self.cf = v;
     }
     #[inline]
@@ -4904,12 +4904,12 @@ impl RawDeleteRequest {
         &self.cf
     }
     #[inline]
-    pub fn mut_cf(&mut self) -> &mut ::prost::BytesString {
+    pub fn mut_cf(&mut self) -> &mut std::string::String {
         &mut self.cf
     }
     #[inline]
-    pub fn take_cf(&mut self) -> ::prost::BytesString {
-        ::std::mem::replace(&mut self.cf, ::prost::BytesString::new())
+    pub fn take_cf(&mut self) -> std::string::String {
+        ::std::mem::replace(&mut self.cf, ::std::string::String::new())
     }
 }
 impl ::protobuf::Clear for RawDeleteRequest {
@@ -5017,7 +5017,7 @@ impl RawDeleteResponse {
         self.error.clear();
     }
     #[inline]
-    pub fn set_error(&mut self, v: ::prost::BytesString) {
+    pub fn set_error(&mut self, v: std::string::String) {
         self.error = v;
     }
     #[inline]
@@ -5025,12 +5025,12 @@ impl RawDeleteResponse {
         &self.error
     }
     #[inline]
-    pub fn mut_error(&mut self) -> &mut ::prost::BytesString {
+    pub fn mut_error(&mut self) -> &mut std::string::String {
         &mut self.error
     }
     #[inline]
-    pub fn take_error(&mut self) -> ::prost::BytesString {
-        ::std::mem::replace(&mut self.error, ::prost::BytesString::new())
+    pub fn take_error(&mut self) -> std::string::String {
+        ::std::mem::replace(&mut self.error, ::std::string::String::new())
     }
 }
 impl ::protobuf::Clear for RawDeleteResponse {
@@ -5138,19 +5138,19 @@ impl RawBatchDeleteRequest {
         self.keys.clear();
     }
     #[inline]
-    pub fn set_keys(&mut self, v: ::std::vec::Vec<::bytes::Bytes>) {
+    pub fn set_keys(&mut self, v: ::std::vec::Vec<std::vec::Vec<u8>>) {
         self.keys = v;
     }
     #[inline]
-    pub fn get_keys(&self) -> &::std::vec::Vec<::bytes::Bytes> {
+    pub fn get_keys(&self) -> &::std::vec::Vec<std::vec::Vec<u8>> {
         &self.keys
     }
     #[inline]
-    pub fn mut_keys(&mut self) -> &mut ::std::vec::Vec<::bytes::Bytes> {
+    pub fn mut_keys(&mut self) -> &mut ::std::vec::Vec<std::vec::Vec<u8>> {
         &mut self.keys
     }
     #[inline]
-    pub fn take_keys(&mut self) -> ::std::vec::Vec<::bytes::Bytes> {
+    pub fn take_keys(&mut self) -> ::std::vec::Vec<std::vec::Vec<u8>> {
         ::std::mem::replace(&mut self.keys, ::std::vec::Vec::new())
     }
     #[inline]
@@ -5158,7 +5158,7 @@ impl RawBatchDeleteRequest {
         self.cf.clear();
     }
     #[inline]
-    pub fn set_cf(&mut self, v: ::prost::BytesString) {
+    pub fn set_cf(&mut self, v: std::string::String) {
         self.cf = v;
     }
     #[inline]
@@ -5166,12 +5166,12 @@ impl RawBatchDeleteRequest {
         &self.cf
     }
     #[inline]
-    pub fn mut_cf(&mut self) -> &mut ::prost::BytesString {
+    pub fn mut_cf(&mut self) -> &mut std::string::String {
         &mut self.cf
     }
     #[inline]
-    pub fn take_cf(&mut self) -> ::prost::BytesString {
-        ::std::mem::replace(&mut self.cf, ::prost::BytesString::new())
+    pub fn take_cf(&mut self) -> std::string::String {
+        ::std::mem::replace(&mut self.cf, ::std::string::String::new())
     }
 }
 impl ::protobuf::Clear for RawBatchDeleteRequest {
@@ -5279,7 +5279,7 @@ impl RawBatchDeleteResponse {
         self.error.clear();
     }
     #[inline]
-    pub fn set_error(&mut self, v: ::prost::BytesString) {
+    pub fn set_error(&mut self, v: std::string::String) {
         self.error = v;
     }
     #[inline]
@@ -5287,12 +5287,12 @@ impl RawBatchDeleteResponse {
         &self.error
     }
     #[inline]
-    pub fn mut_error(&mut self) -> &mut ::prost::BytesString {
+    pub fn mut_error(&mut self) -> &mut std::string::String {
         &mut self.error
     }
     #[inline]
-    pub fn take_error(&mut self) -> ::prost::BytesString {
-        ::std::mem::replace(&mut self.error, ::prost::BytesString::new())
+    pub fn take_error(&mut self) -> std::string::String {
+        ::std::mem::replace(&mut self.error, ::std::string::String::new())
     }
 }
 impl ::protobuf::Clear for RawBatchDeleteResponse {
@@ -5400,7 +5400,7 @@ impl DeleteRangeRequest {
         self.start_key.clear();
     }
     #[inline]
-    pub fn set_start_key(&mut self, v: ::bytes::Bytes) {
+    pub fn set_start_key(&mut self, v: std::vec::Vec<u8>) {
         self.start_key = v;
     }
     #[inline]
@@ -5408,19 +5408,19 @@ impl DeleteRangeRequest {
         &self.start_key
     }
     #[inline]
-    pub fn mut_start_key(&mut self) -> &mut ::bytes::Bytes {
+    pub fn mut_start_key(&mut self) -> &mut std::vec::Vec<u8> {
         &mut self.start_key
     }
     #[inline]
-    pub fn take_start_key(&mut self) -> ::bytes::Bytes {
-        ::std::mem::replace(&mut self.start_key, ::bytes::Bytes::new())
+    pub fn take_start_key(&mut self) -> std::vec::Vec<u8> {
+        ::std::mem::replace(&mut self.start_key, ::std::vec::Vec::new())
     }
     #[inline]
     pub fn clear_end_key(&mut self) {
         self.end_key.clear();
     }
     #[inline]
-    pub fn set_end_key(&mut self, v: ::bytes::Bytes) {
+    pub fn set_end_key(&mut self, v: std::vec::Vec<u8>) {
         self.end_key = v;
     }
     #[inline]
@@ -5428,12 +5428,12 @@ impl DeleteRangeRequest {
         &self.end_key
     }
     #[inline]
-    pub fn mut_end_key(&mut self) -> &mut ::bytes::Bytes {
+    pub fn mut_end_key(&mut self) -> &mut std::vec::Vec<u8> {
         &mut self.end_key
     }
     #[inline]
-    pub fn take_end_key(&mut self) -> ::bytes::Bytes {
-        ::std::mem::replace(&mut self.end_key, ::bytes::Bytes::new())
+    pub fn take_end_key(&mut self) -> std::vec::Vec<u8> {
+        ::std::mem::replace(&mut self.end_key, ::std::vec::Vec::new())
     }
 }
 impl ::protobuf::Clear for DeleteRangeRequest {
@@ -5541,7 +5541,7 @@ impl DeleteRangeResponse {
         self.error.clear();
     }
     #[inline]
-    pub fn set_error(&mut self, v: ::prost::BytesString) {
+    pub fn set_error(&mut self, v: std::string::String) {
         self.error = v;
     }
     #[inline]
@@ -5549,12 +5549,12 @@ impl DeleteRangeResponse {
         &self.error
     }
     #[inline]
-    pub fn mut_error(&mut self) -> &mut ::prost::BytesString {
+    pub fn mut_error(&mut self) -> &mut std::string::String {
         &mut self.error
     }
     #[inline]
-    pub fn take_error(&mut self) -> ::prost::BytesString {
-        ::std::mem::replace(&mut self.error, ::prost::BytesString::new())
+    pub fn take_error(&mut self) -> std::string::String {
+        ::std::mem::replace(&mut self.error, ::std::string::String::new())
     }
 }
 impl ::protobuf::Clear for DeleteRangeResponse {
@@ -5893,7 +5893,7 @@ impl KeyNotInRegion {
         self.key.clear();
     }
     #[inline]
-    pub fn set_key(&mut self, v: ::bytes::Bytes) {
+    pub fn set_key(&mut self, v: std::vec::Vec<u8>) {
         self.key = v;
     }
     #[inline]
@@ -5901,12 +5901,12 @@ impl KeyNotInRegion {
         &self.key
     }
     #[inline]
-    pub fn mut_key(&mut self) -> &mut ::bytes::Bytes {
+    pub fn mut_key(&mut self) -> &mut std::vec::Vec<u8> {
         &mut self.key
     }
     #[inline]
-    pub fn take_key(&mut self) -> ::bytes::Bytes {
-        ::std::mem::replace(&mut self.key, ::bytes::Bytes::new())
+    pub fn take_key(&mut self) -> std::vec::Vec<u8> {
+        ::std::mem::replace(&mut self.key, ::std::vec::Vec::new())
     }
     #[inline]
     pub fn clear_region_id(&mut self) {
@@ -5925,7 +5925,7 @@ impl KeyNotInRegion {
         self.start_key.clear();
     }
     #[inline]
-    pub fn set_start_key(&mut self, v: ::bytes::Bytes) {
+    pub fn set_start_key(&mut self, v: std::vec::Vec<u8>) {
         self.start_key = v;
     }
     #[inline]
@@ -5933,19 +5933,19 @@ impl KeyNotInRegion {
         &self.start_key
     }
     #[inline]
-    pub fn mut_start_key(&mut self) -> &mut ::bytes::Bytes {
+    pub fn mut_start_key(&mut self) -> &mut std::vec::Vec<u8> {
         &mut self.start_key
     }
     #[inline]
-    pub fn take_start_key(&mut self) -> ::bytes::Bytes {
-        ::std::mem::replace(&mut self.start_key, ::bytes::Bytes::new())
+    pub fn take_start_key(&mut self) -> std::vec::Vec<u8> {
+        ::std::mem::replace(&mut self.start_key, ::std::vec::Vec::new())
     }
     #[inline]
     pub fn clear_end_key(&mut self) {
         self.end_key.clear();
     }
     #[inline]
-    pub fn set_end_key(&mut self, v: ::bytes::Bytes) {
+    pub fn set_end_key(&mut self, v: std::vec::Vec<u8>) {
         self.end_key = v;
     }
     #[inline]
@@ -5953,12 +5953,12 @@ impl KeyNotInRegion {
         &self.end_key
     }
     #[inline]
-    pub fn mut_end_key(&mut self) -> &mut ::bytes::Bytes {
+    pub fn mut_end_key(&mut self) -> &mut std::vec::Vec<u8> {
         &mut self.end_key
     }
     #[inline]
-    pub fn take_end_key(&mut self) -> ::bytes::Bytes {
-        ::std::mem::replace(&mut self.end_key, ::bytes::Bytes::new())
+    pub fn take_end_key(&mut self) -> std::vec::Vec<u8> {
+        ::std::mem::replace(&mut self.end_key, ::std::vec::Vec::new())
     }
 }
 impl ::protobuf::Clear for KeyNotInRegion {
@@ -6036,7 +6036,7 @@ impl ServerIsBusy {
         self.reason.clear();
     }
     #[inline]
-    pub fn set_reason(&mut self, v: ::prost::BytesString) {
+    pub fn set_reason(&mut self, v: std::string::String) {
         self.reason = v;
     }
     #[inline]
@@ -6044,12 +6044,12 @@ impl ServerIsBusy {
         &self.reason
     }
     #[inline]
-    pub fn mut_reason(&mut self) -> &mut ::prost::BytesString {
+    pub fn mut_reason(&mut self) -> &mut std::string::String {
         &mut self.reason
     }
     #[inline]
-    pub fn take_reason(&mut self) -> ::prost::BytesString {
-        ::std::mem::replace(&mut self.reason, ::prost::BytesString::new())
+    pub fn take_reason(&mut self) -> std::string::String {
+        ::std::mem::replace(&mut self.reason, ::std::string::String::new())
     }
     #[inline]
     pub fn clear_backoff_ms(&mut self) {
@@ -6305,7 +6305,7 @@ impl Error {
         self.message.clear();
     }
     #[inline]
-    pub fn set_message(&mut self, v: ::prost::BytesString) {
+    pub fn set_message(&mut self, v: std::string::String) {
         self.message = v;
     }
     #[inline]
@@ -6313,12 +6313,12 @@ impl Error {
         &self.message
     }
     #[inline]
-    pub fn mut_message(&mut self) -> &mut ::prost::BytesString {
+    pub fn mut_message(&mut self) -> &mut std::string::String {
         &mut self.message
     }
     #[inline]
-    pub fn take_message(&mut self) -> ::prost::BytesString {
-        ::std::mem::replace(&mut self.message, ::prost::BytesString::new())
+    pub fn take_message(&mut self) -> std::string::String {
+        ::std::mem::replace(&mut self.message, ::std::string::String::new())
     }
     #[inline]
     pub fn has_not_leader(&self) -> bool {
@@ -7079,7 +7079,7 @@ impl KeyError {
         self.retryable.clear();
     }
     #[inline]
-    pub fn set_retryable(&mut self, v: ::prost::BytesString) {
+    pub fn set_retryable(&mut self, v: std::string::String) {
         self.retryable = v;
     }
     #[inline]
@@ -7087,19 +7087,19 @@ impl KeyError {
         &self.retryable
     }
     #[inline]
-    pub fn mut_retryable(&mut self) -> &mut ::prost::BytesString {
+    pub fn mut_retryable(&mut self) -> &mut std::string::String {
         &mut self.retryable
     }
     #[inline]
-    pub fn take_retryable(&mut self) -> ::prost::BytesString {
-        ::std::mem::replace(&mut self.retryable, ::prost::BytesString::new())
+    pub fn take_retryable(&mut self) -> std::string::String {
+        ::std::mem::replace(&mut self.retryable, ::std::string::String::new())
     }
     #[inline]
     pub fn clear_abort(&mut self) {
         self.abort.clear();
     }
     #[inline]
-    pub fn set_abort(&mut self, v: ::prost::BytesString) {
+    pub fn set_abort(&mut self, v: std::string::String) {
         self.abort = v;
     }
     #[inline]
@@ -7107,12 +7107,12 @@ impl KeyError {
         &self.abort
     }
     #[inline]
-    pub fn mut_abort(&mut self) -> &mut ::prost::BytesString {
+    pub fn mut_abort(&mut self) -> &mut std::string::String {
         &mut self.abort
     }
     #[inline]
-    pub fn take_abort(&mut self) -> ::prost::BytesString {
-        ::std::mem::replace(&mut self.abort, ::prost::BytesString::new())
+    pub fn take_abort(&mut self) -> std::string::String {
+        ::std::mem::replace(&mut self.abort, ::std::string::String::new())
     }
     #[inline]
     pub fn has_conflict(&self) -> bool {
@@ -7252,7 +7252,7 @@ impl LockInfo {
         self.primary_lock.clear();
     }
     #[inline]
-    pub fn set_primary_lock(&mut self, v: ::bytes::Bytes) {
+    pub fn set_primary_lock(&mut self, v: std::vec::Vec<u8>) {
         self.primary_lock = v;
     }
     #[inline]
@@ -7260,12 +7260,12 @@ impl LockInfo {
         &self.primary_lock
     }
     #[inline]
-    pub fn mut_primary_lock(&mut self) -> &mut ::bytes::Bytes {
+    pub fn mut_primary_lock(&mut self) -> &mut std::vec::Vec<u8> {
         &mut self.primary_lock
     }
     #[inline]
-    pub fn take_primary_lock(&mut self) -> ::bytes::Bytes {
-        ::std::mem::replace(&mut self.primary_lock, ::bytes::Bytes::new())
+    pub fn take_primary_lock(&mut self) -> std::vec::Vec<u8> {
+        ::std::mem::replace(&mut self.primary_lock, ::std::vec::Vec::new())
     }
     #[inline]
     pub fn clear_lock_version(&mut self) {
@@ -7284,7 +7284,7 @@ impl LockInfo {
         self.key.clear();
     }
     #[inline]
-    pub fn set_key(&mut self, v: ::bytes::Bytes) {
+    pub fn set_key(&mut self, v: std::vec::Vec<u8>) {
         self.key = v;
     }
     #[inline]
@@ -7292,12 +7292,12 @@ impl LockInfo {
         &self.key
     }
     #[inline]
-    pub fn mut_key(&mut self) -> &mut ::bytes::Bytes {
+    pub fn mut_key(&mut self) -> &mut std::vec::Vec<u8> {
         &mut self.key
     }
     #[inline]
-    pub fn take_key(&mut self) -> ::bytes::Bytes {
-        ::std::mem::replace(&mut self.key, ::bytes::Bytes::new())
+    pub fn take_key(&mut self) -> std::vec::Vec<u8> {
+        ::std::mem::replace(&mut self.key, ::std::vec::Vec::new())
     }
     #[inline]
     pub fn clear_lock_ttl(&mut self) {
@@ -7387,7 +7387,7 @@ impl AlreadyExist {
         self.key.clear();
     }
     #[inline]
-    pub fn set_key(&mut self, v: ::bytes::Bytes) {
+    pub fn set_key(&mut self, v: std::vec::Vec<u8>) {
         self.key = v;
     }
     #[inline]
@@ -7395,12 +7395,12 @@ impl AlreadyExist {
         &self.key
     }
     #[inline]
-    pub fn mut_key(&mut self) -> &mut ::bytes::Bytes {
+    pub fn mut_key(&mut self) -> &mut std::vec::Vec<u8> {
         &mut self.key
     }
     #[inline]
-    pub fn take_key(&mut self) -> ::bytes::Bytes {
-        ::std::mem::replace(&mut self.key, ::bytes::Bytes::new())
+    pub fn take_key(&mut self) -> std::vec::Vec<u8> {
+        ::std::mem::replace(&mut self.key, ::std::vec::Vec::new())
     }
 }
 impl ::protobuf::Clear for AlreadyExist {
@@ -7502,7 +7502,7 @@ impl WriteConflict {
         self.key.clear();
     }
     #[inline]
-    pub fn set_key(&mut self, v: ::bytes::Bytes) {
+    pub fn set_key(&mut self, v: std::vec::Vec<u8>) {
         self.key = v;
     }
     #[inline]
@@ -7510,19 +7510,19 @@ impl WriteConflict {
         &self.key
     }
     #[inline]
-    pub fn mut_key(&mut self) -> &mut ::bytes::Bytes {
+    pub fn mut_key(&mut self) -> &mut std::vec::Vec<u8> {
         &mut self.key
     }
     #[inline]
-    pub fn take_key(&mut self) -> ::bytes::Bytes {
-        ::std::mem::replace(&mut self.key, ::bytes::Bytes::new())
+    pub fn take_key(&mut self) -> std::vec::Vec<u8> {
+        ::std::mem::replace(&mut self.key, ::std::vec::Vec::new())
     }
     #[inline]
     pub fn clear_primary(&mut self) {
         self.primary.clear();
     }
     #[inline]
-    pub fn set_primary(&mut self, v: ::bytes::Bytes) {
+    pub fn set_primary(&mut self, v: std::vec::Vec<u8>) {
         self.primary = v;
     }
     #[inline]
@@ -7530,12 +7530,12 @@ impl WriteConflict {
         &self.primary
     }
     #[inline]
-    pub fn mut_primary(&mut self) -> &mut ::bytes::Bytes {
+    pub fn mut_primary(&mut self) -> &mut std::vec::Vec<u8> {
         &mut self.primary
     }
     #[inline]
-    pub fn take_primary(&mut self) -> ::bytes::Bytes {
-        ::std::mem::replace(&mut self.primary, ::bytes::Bytes::new())
+    pub fn take_primary(&mut self) -> std::vec::Vec<u8> {
+        ::std::mem::replace(&mut self.primary, ::std::vec::Vec::new())
     }
 }
 impl ::protobuf::Clear for WriteConflict {
