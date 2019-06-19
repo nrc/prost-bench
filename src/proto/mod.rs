@@ -1,14 +1,14 @@
 #![allow(dead_code)]
 
-pub mod simple_prost {
-    include!("prost/simple.rs");
-    include!("prost/wrapper_simple.rs");
-}
+// pub mod simple_prost {
+//     include!("prost/simple.rs");
+//     include!("prost/wrapper_simple.rs");
+// }
 
-// #[path = "protobuf/simple.rs"]
-// pub mod simple;
-// #[path = "protobuf/simple_grpc.rs"]
-// pub mod simple_grpc;
+#[path = "protobuf/get.rs"]
+pub mod get;
+#[path = "protobuf/get_grpc.rs"]
+pub mod get_grpc;
 
 
 // pub mod complex_prost {
@@ -21,7 +21,7 @@ pub mod simple_prost {
 // #[path = "protobuf/complex_grpc.rs"]
 // pub mod complex_grpc;
 
-pub mod get_prost {
-    include!("prost/get.rs");
-    include!("prost/wrapper_get.rs");
-}
+// pub mod get_prost {
+//     include!("prost/get.rs");
+//     include!("prost/wrapper_get.rs");
+// }

@@ -37,8 +37,8 @@ impl ::protobuf::Message for Data {
     fn get_cached_size(&self) -> u32 {
         ::prost::Message::encoded_len(self) as u32
     }
-    fn as_any(&self) -> &::std::any::Any {
-        self as &::std::any::Any
+    fn as_any(&self) -> &dyn::std::any::Any {
+        self as &dyn::std::any::Any
     }
     fn descriptor(&self) -> &'static ::protobuf::reflect::MessageDescriptor {
         Self::descriptor_static()
