@@ -5,10 +5,10 @@
 //     include!("prost/wrapper_simple.rs");
 // }
 
-#[path = "protobuf/get.rs"]
-pub mod get;
-#[path = "protobuf/get_grpc.rs"]
-pub mod get_grpc;
+// #[path = "protobuf/get.rs"]
+// pub mod get;
+// #[path = "protobuf/get_grpc.rs"]
+// pub mod get_grpc;
 
 
 // pub mod complex_prost {
@@ -21,7 +21,7 @@ pub mod get_grpc;
 // #[path = "protobuf/complex_grpc.rs"]
 // pub mod complex_grpc;
 
-// pub mod get_prost {
-//     include!("prost/get.rs");
-//     include!("prost/wrapper_get.rs");
-// }
+pub mod get_prost {
+    include!("prost/get.rs");
+    include!("prost/wrapper_get.rs");
+}

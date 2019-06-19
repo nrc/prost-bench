@@ -139,11 +139,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 name = "grpcio"
 version = "0.5.0-alpha.1"
 dependencies = [
+ "bytes 0.4.12 (registry+https://github.com/rust-lang/crates.io-index)",
  "futures 0.1.27 (registry+https://github.com/rust-lang/crates.io-index)",
  "grpcio-sys 0.5.0-alpha",
  "libc 0.2.50 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.4.6 (registry+https://github.com/rust-lang/crates.io-index)",
- "protobuf 2.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "prost 0.5.0",
 ]
 
 [[package]]
